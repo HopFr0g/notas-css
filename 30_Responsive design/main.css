@@ -1,0 +1,43 @@
+* {
+	font-family: 'Poppins', sans-serif;
+}
+
+.div-responsive {
+	background: #3ff;
+}
+
+/* Responsive design es un concepto de trabajo que se puede aplicar a CSS.
+   Consiste en adaptar el contenido de la página web a distintas resoluciones. */
+
+/* MOBILE FIRST: Consiste en diseñar la página, primero para dispositivos móviles, y luego adaptarla a pantallas más anchas
+   DESKTOP FIRST: Consiste en diseñar, primero para escritorio, y luego adaptarla a pantallas más delgadas (móbiles)
+   CONTENT FIRST: Centrarse solo en el contenido, y luego adaptar ese contenido a las distintas pantallas (se usa en marketing)
+
+   Conviene diseñar con MOBILE FIRST */
+
+/* MEDIA QUERY: @media es un condicional que se utiliza en consultas de medios para aplicar diferentes estilos
+para diferentes tipos o dispositivos de medios.
+
+Sintaxis del @media: 
+
+@media {tipo} {operador "and" o "or"} (condición) 
+
+El {tipo} es la primera condición que se debe cumplir.
+Si el {tipo} es "screen" la primera condición es que la página se encuentre en una pantalla.
+El {tipo} también podría ser "print" (si es una página que está por imprimirse) o puede ser "all" (para aplicarlo a todo)
+
+La (condicion) puede ser, por ejemplo "min-width", "max-width", etc. */
+
+@media screen and (max-width: 400px) /* condición: que sea una pantalla Y que el ancho sea menor a 400px */ {
+	.div-responsive {
+		background: #ff3;
+	}
+}
+
+/* otro ejemplo, utilizando más operadores lógicos (and / or) para anidar más de dos condicionales: */
+
+@media screen and (min-width: 400px) and (max-width: 650px) /* la condición se cumple si hay más de 400px y menos de 650px */ {
+	.div-responsive {
+		color: #22b;
+	}
+}

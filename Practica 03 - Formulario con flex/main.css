@@ -1,0 +1,48 @@
+/* Propiedades de texto generales: */
+* {
+	font-family: 'Poppins', sans-serif;
+	color: #000;
+	font-size: 24px;
+}
+
+/* Propiedades del body: */
+body {
+	background-color: #000;
+}
+
+/* Propiedades de todos los divs: */
+div {
+	text-align: center;
+}
+
+/* Flex container: */
+.flex-container {
+	background-color: #444;
+	padding: 20px;
+	margin: 40px;
+	
+	display: flex;
+	flex-wrap: wrap;
+}
+
+/* Primer flex-item: es un div que está pensado para contener una imagen en su interior */
+.flex-container__div {
+	background-color: #2a9;
+
+	min-width: 250px;
+	min-height: 250px;
+
+	margin: auto;
+	order: 0;
+}
+
+/* Segundo flex-item: es un form que está pensado para contener inputs y espacios de texto en su interior */
+.flex-container__form {
+	background-color: #b36;
+
+	min-width: 60%;
+	min-height: 200px; /* una vez que este form tenga elementos en su interior, se debe quitar esta altura mínima y dejar que esos mismos elementos definan la altura mínima */
+
+	flex-grow: 1; /* todo el espacio excedente será aprovechado por este contenedor */
+	order: 1;
+}

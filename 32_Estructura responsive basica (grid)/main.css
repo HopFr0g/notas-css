@@ -1,0 +1,67 @@
+* {
+	font-family: 'Poppins', sans-serif;
+}
+
+/* DISEÑO MOBILE FIRST: */
+
+.content {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+
+.header, .main, .aside, .footer {
+	padding: 20px;
+}
+
+.header {
+	background: #a22;
+	flex-basis: 60px; /* define el tamaño del item, en este caso el main-axis es vertical, por lo que flex-basis es un height */
+}
+
+.main {
+	background: #a70;
+	flex-basis: 400px;
+	flex-grow: 2; /* flex-grow define, entre el espacio vacío que sobre, que proporción de ese espacio ocupará cada ítem */
+	flex-shrink: 0; /* flex-shrink define la proporción en que este ítem debe encogerse cuando no haya suficiente espacio */
+}
+
+.aside {
+	background: #bb0;
+	flex-basis: 200px;
+	flex-grow: 1;
+	flex-shrink: 0;
+}
+
+.footer {
+	background: #f33;
+	flex-grow: 1;
+}
+
+/* ADAPTACIÓN PARA ESCRITORIOS: */
+
+@media screen and (min-width: 700px) {
+	.content {
+		display: grid;
+		grid-template-columns: 80px repeat(4, 1fr) 80px;
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.header {
+		grid-column: 1 / span 3;
+	}
+
+	.main {
+		grid-column: 1 / span 2;
+		grid-row: 2 / 6;
+	}
+
+	.aside {
+		grid-row: 2 / 6;
+	}
+
+	.footer {
+		grid-row: 6 / 7;
+		grid-column: 1 / span 3;
+	}
+}

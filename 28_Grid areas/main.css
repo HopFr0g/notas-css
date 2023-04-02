@@ -1,0 +1,54 @@
+* {
+	font-family: 'Poppins', sans-serif;
+}
+
+body {
+	background: radial-gradient(circle, #999, #ddd);
+}
+
+/* un grid-area es un rectangulo formado por celdas, un área tiene como mínimo 2 celdas */
+
+.grid-container {
+	background-color: #444;
+	margin: 10px;
+	height: 90vh;
+	display: grid;
+
+	/* definir grid-areas: 
+	   cada fila se pone separada entre comillas
+	   en cada fila, se debe indicar la cantidad de columnas que ocupará cada sección 
+	   se le puede dar cualquier nombre a las secciones */
+	grid-template-areas:
+	"header header header"
+	"aside main main"
+	"aside main main"
+	"aside main main"
+	"aside main main"
+	"footer footer footer";
+	/* se ha creado una cantidad de filas y de columnas de acuerdo a las áreas que creé en "grid-template-areas"
+	   en este caso, fueron 6 filas y 3 columnas. Puedo modificar las dimensiones de las mismas utilizando las
+	   propiedades "grid-template-rows" y "grid-template-columns" */
+	grid-template-rows: repeat(auto-fill, 1fr);
+}
+
+.grid-header {
+	background-color: #49c;
+	/* para indicar qué área le corresponde a este grid-item, se usa grid-area: [nombre de la sección]; el nombre de la sección
+	debe ser el mismo que se utilizó para modelar el "grid-template-areas" de más arriba, en el grid-container */
+	grid-area: header;
+}
+
+.grid-main {
+	background-color: #cc0;
+	grid-area: main;
+}
+
+.grid-aside {
+	background-color: #6f9;
+	grid-area: aside;
+}
+
+.grid-footer {
+	background-color: #b45;
+	grid-area: footer;
+}

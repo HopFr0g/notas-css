@@ -1,0 +1,44 @@
+* {
+	font-family: 'Poppins', sans-serif;
+	color: #00f;
+
+	/* cuando un enlace <a> te desplaza hacia otra altura de la página
+	   la propiedad scroll-behavior permite definir la suavidad de ese scroll */
+	scroll-behavior: smooth;
+
+	/* Si, delante de una propiedad, pongo:
+	   -moz- la propiedad solo aplicará en firefox
+	   -webkit- la propiedad solo aplicará en chrome */
+	-moz-color: #000;
+}
+
+.main-section {
+	text-align: center;
+}
+
+.main-section__h1 {
+	font-size: 72px;
+	color: #288;
+
+	/* para evitar que el texto pueda seleccionarse uso la propiedad user-select y el valor none*/
+	user-select: none;
+}
+
+.main-section__p {
+	font-size: 32px;
+
+	/* la propiedad direction permite alinear el texto */
+	direction: rtl; /* rtl es right to left, el valor default es ltr */
+
+	/* la propiedad letter-spacing define la separación que habrá entre los caracteres */
+	letter-spacing: 3px;
+}
+
+.main-section__a {
+	color: #f12;
+	font-size: 48px;
+}
+
+.highlighted {
+	background: #6f9;
+}

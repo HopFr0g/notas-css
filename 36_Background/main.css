@@ -1,0 +1,63 @@
+* {
+	font-family: 'Poppins', sans-serif;
+	font-size: 32px;
+}
+
+.container {
+	padding: 20px 5px;
+	background: #86f;
+	width: 360px;
+	height: 360px;
+	margin: 40px;
+
+	/* La propiedad background es un shorthand de las siguientes propiedades:
+	   - background-color
+	   - background-image
+	   - background-size
+	   - background-repeat
+	   - background-position
+	   - background-attachment
+	   - background-clip
+	   - background-origin */
+
+	/* A la propiedad background-image se le debe dar, como valor, la direccion de una imagen mediante la funcion url() */
+	background-image: url(https://static.wikia.nocookie.net/rezero/images/4/45/Ram_ep.30.png/revision/latest?cb=20200810070232);
+
+	/* Puedo cambiar el tamaño de una imagen usada como background con background-size: x y; donde debo definir
+	   las dimensiones (en pixeles) o la escala (en porcentaje) que tendrá la imagen en el eje horizontal y en el vertical
+
+	   También puedo utilizar un único valor, por ejemplo background-size: 100%;
+
+	   También puedo ponerle el valor "cover" (igual que como se ha visto en object-fit)
+	   Escala la imagen al mayor tamaño posible sin estirarla. Si las proporciones de la imagen difieren de las del elemento,
+	   es recortada vertical u horizontalmente para que no quede un espacio vacío.
+
+	   O puedo darle el valor "contain", que escala la imagen al mayor tamaño posible sin recortarla ni estirarla. */
+	background-size: contain;
+
+	/* con background-repeat defino si la imagen de fondo debe repetirse en caso de sobrar espacio vacío */
+	background-repeat: no-repeat;
+
+	/* la propiedad background-clip define desde donde tiene que mostrarse la imagen, sus posibles valores son:
+	   - border-box: mostrar la imagen a partir de los bordes del contenedor
+	   - padding-box: la imagen se muestra luego del padding del contenedor
+	   - content-box: la imagen se empieza a mostrar desde el contenido */
+	background-clip: border-box; /* default */
+
+	/* la propiedad background-origin es similar, me permite elegir donde debe comenzar la imagen, sus posibles valores son:
+	- border-box: la imagen comienza en un borde y termina en el otro borde
+	- padding-box
+	- content-box */
+	background-origin: border-box;
+
+	/* background-clip recorta la imagen según la posición dada
+	   background-origin crea la imagen a partir de la posición dada */
+
+	/* background-position: x y; recibe valores de posición "left", "top", "center", etc
+	para definir la posición que tendrá la imagen en el eje horizontal y vertical */
+	background-position: left bottom;
+
+	/* background-attachment define qué parte de la imagen se debe ver, dependiendo si se toma como referencia
+	   el viewport (en ese caso, darle el valor "fixed") o el valor "scroll" */
+	   background-attachment: fixed;
+}

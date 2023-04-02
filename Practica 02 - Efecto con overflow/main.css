@@ -1,0 +1,32 @@
+* {
+	font-family: 'Poppins', sans-serif;
+	color: blue;
+}
+
+.main-section {
+	margin: auto;
+	margin-top: 50px;
+
+	width: 300px;
+	height: 300px; /* las imágenes contenidas en un div, siempre ajustan su tamaño automáticamente para quedar dentro del div */
+
+	background: black;
+	border: 2px solid darkgray;
+
+	overflow: hidden; /* con esto, el contenido excedente quedará afuera del div y no aparecerá una barra para scrollear */
+}
+
+.main-section__img {
+	width: 1000px; /* aunque le de un gran tamaño a la imagen, esta seguirá teniendo el tamaño apropiado para entrar en el div */
+	position: relative;
+	top: 100px;
+	left: 100px;
+
+	transition: all 1.2s;
+}
+
+.main-section:hover > .main-section__img { /* animacion de transicion que ocurrirá al pasar el cursor sobre el div */
+	position: relative;
+	top: 0px;
+	left: 0px;
+}

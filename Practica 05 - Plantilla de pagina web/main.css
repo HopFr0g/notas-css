@@ -1,0 +1,161 @@
+* {
+	font-family: 'Poppins', sans-serif;
+	color: #ddd;
+	font-size: 24px;
+}
+
+body {
+	background: #bb4;
+}
+
+/* Diseño mobile first: */
+
+.content {
+	display: flex;
+	flex-direction: column;
+}
+
+.header {
+	min-height: 80px;
+	background: #557;
+	position: relative;
+}
+
+.nav {
+	min-height: 80px;
+	background: #335;
+	position: sticky;
+	top: 0;
+	bottom: 0;
+	z-index: 1000;
+}
+
+.article {
+	position: relative;
+	z-index: 100;
+	pointer-events: none; /* esto es para que la publicidad, que está detrás de este div, se pueda tocar igual
+							 (por defecto, el div que está delante impide que se haga hover o click sobre el elemento trasero */
+}
+
+.article-1, .article-2 {
+	background: #bb4;
+	color: #111;
+	pointer-events: fill; /* detrás del texto, en cambio, no se puede hacer click a la publicidad que está escondida atrás */
+}
+
+.article-1 {
+	margin-bottom: 400px;
+}
+
+.aside {
+	min-height: 250px;
+	background: #a33;
+	position: relative;
+}
+
+.ad {
+	background: #533;
+	min-height: 250px;
+	width: 100%;
+	position: fixed;
+	top: 80px;
+	z-index: 0;
+}
+
+.footer {
+	min-height: 80px;
+	background: #113;
+	position: relative;
+	bottom: 0;
+}
+
+/* adaptacion para celulares y tabletas en modo horizontal, o pantallas de escritorio no tan anchas: */
+
+@media screen and (min-width: 600px) and (max-width: 1000px) {
+	.content {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+	}
+
+	.header {
+		width: 100%;
+	}
+
+	.nav {
+		width: 100%;
+	}
+
+	.article {
+		width: calc(100vw - 250px);
+	}
+
+	.article-1, .article-2 {
+		width: 100%;
+	}
+
+	.aside {
+		flex-grow: 1;
+		max-width: 250px;
+	}
+
+	.ad {
+		max-width: calc(100vw - 250px);
+	}
+
+	.footer {
+		width: 100%;
+	}
+}
+
+/* adaptacion para pantallas anchas: */
+
+@media screen and (min-width: 1000px) {
+	.content {
+		min-height: 100vh;
+		display: grid;
+		grid-template-columns: 250px 1fr 250px;
+		grid-template-rows: 80px 80px minmax(250px, max-content) minmax(80px, 1fr);
+	}
+
+	.header, .article, .ad, .aside, .footer {
+		position: static;
+		width: 100%;
+		height: 100%;
+	}
+
+	.header {
+		grid-column: 1 / span 3;
+		grid-row: 1 / 2;
+	}
+
+	.nav {
+		grid-column: 1 / span 3;
+		grid-row: 2 / 3;
+	}
+
+	.article {
+		grid-column: 2 / 3;
+		grid-row: 3 / 4;
+	}
+
+	.article-1 {
+		margin: 0;
+	}
+
+	.aside {
+		grid-column: 1 / 2;
+		grid-row: 3 / 4;
+	}
+
+	.ad {
+		grid-column: 3 / 4;
+		grid-row: 3 / 4;
+	}
+
+	.footer {
+		grid-column: 1 / span 3;
+		grid-row: 4 / 5;
+	}
+}

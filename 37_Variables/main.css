@@ -1,0 +1,24 @@
+* {
+	font-family: 'Poppins', sans-serif;
+}
+
+/* una variable es un espacio que se almacena en memoria */
+
+/* las variables globales son las que tienen alcance sobre cualquier elemento
+   las variables locales solo se pueden utilizar dentro de los mismos elementos en que definí esa variable */
+
+/* root es una pseudo-clase que selecciona el elemento raíz de un árbol, es útil para declarar variables globales: */
+:root {
+	/* las variables se definen utilizando dos guiones -- antes de su nombre: */
+	--color-principal: #822;
+	--color-secundario: #299;
+}
+
+.main-section {
+	/* las variables se llaman utilizando la función var(nombre de la variable) */
+	color: var(--color-principal);
+}
+
+.main-section__p {
+	color: var(--color-secundario);
+}

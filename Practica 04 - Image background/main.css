@@ -1,0 +1,119 @@
+* {
+	font-family: 'Poppins', sans-serif;
+	color: #fff;
+}
+
+p::selection, h2::selection, p i::selection {
+	background-color: #082;
+}
+
+body {
+	background-image: url(background.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 80% center; /* el valor podría ser "center center"; yo puse un 80% para que esa es la parte más importante de la imagen en el eje horizontal */
+	background-attachment: fixed;
+}
+
+/* El siguiente div debe ocupar toda la pantalla, se utilizará para dar
+   un color con transparencia que opaque un poco la imagen que está en el fondo. */
+.background-fog {
+	/* posicionarlo y hacer que comience en la esquina superior izquierda */
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	/* asegurarse que esté siempre en el fondo, dado que es "parte del background" y todo lo demás debe estar encima */
+	z-index: 0;
+	
+	/* asegurarse de que ocupe toda la pantalla */
+	padding: 0;
+	margin: 0;
+
+	/* darle el tamaño del viewport completo */
+	width: 100vw;
+	height: 100vh;
+
+	/* darle un color de fondo con transparencia */
+	background-color: #000c;
+}
+
+/* esto no tiene nada que ver con el fondo, lo estoy haciendo de onda: */
+.bienvenida {
+	width: 50%;
+	min-width: 400px;
+	height: 350px;
+
+	background-color: #000;
+
+	position: absolute;
+	z-index: 10;
+
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	margin: auto;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.mensaje-bienvenida {
+	order: 1;
+
+	width: 80%;
+
+	margin: 20px;
+
+	text-align: center;
+}
+
+.mensaje-bienvenida__h2 {
+	text-transform: uppercase;
+	font-size: 32px;
+
+	margin-bottom: 10px;
+}
+
+.mensaje-bienvenida__p {
+	font-size: 12px;
+	text-align: justify;
+
+	margin-top: 10px;
+}
+
+.boton-bienvenida {
+	order: 2;
+
+	margin: 20px;
+	
+	width: 80%;
+}
+
+.boton-bienvenida__a {
+	text-decoration: none;
+	text-align: center;
+
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+
+	padding: 8px;
+
+	background-color: #082;
+	border-bottom: 4px solid #062;
+}
+.boton-bienvenida__a:hover {
+	background-color: #2a2;
+	border-bottom: 4px solid #282;
+}
+
+@media only screen and (max-width: 500px) {
+	.bienvenida {
+		width: 100%;
+		min-width: 100%;
+	}
+}

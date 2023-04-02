@@ -1,0 +1,60 @@
+* {
+	font-family: 'Poppins', sans-serif;
+}
+
+/* Transform: es una propiedad que nos permite transformar un elemento
+   Hay distintos tipos de transformaciones y se logra a través de funciones. */
+
+.container {
+	padding: 20px 5px;
+	background: #86f;
+}
+
+.caja-1 {
+	background: #025;
+	height: 80px;
+	width: 80px;
+	margin: 20px;
+	display: flex;
+	color: #fff;
+
+	/* con transform: translateX(); podemos trasladar el elemento en el eje horizontal */
+	transform: translateX(100%); /* si en vez de una medida en píxeles, damos un porcentaje
+									se tomará ese porcentaje respecto al ancho total del elemento */
+	/* también se le pueden dar valores negativos */
+	/* también podemos usar translateY() para el eje vertical */
+	/* la propiedad translate(X, Y) es un shorthand que acepta un parámetro para cada eje */
+
+	/* EL VALOR TRANSLATE DE LA PROPIEDAD TRANSFORM CONSUME MUY POCO RECURSOS, POR LO QUE SE
+	   LA DEBE UTILIZAR AL MOMENTO DE CREAR ANIMACIONES */
+	/* Cuando se cambia el margin, top, left... de un elemento, cambia el layout entero de la página
+	   para adaptarse a ese nuevo elemento que cambió. En cambio, al utilizar transform, solo cambia
+	   ese elemento en específico */
+
+	transition: transform 1s;
+}
+
+.caja:hover {
+	/* se usa la función scale() como valor de la propiedad transform, para escalar el elemento */
+	/* para usar más de una transformación, dar más de un valor a la propiedad transform */
+	/* con skew(angulo) se puede rotar el elemento. La unidad para un ángulo en grados es deg (degree) */
+	transform: translateY(300%) scale(2.0) skew(20deg);
+}
+
+b {
+	margin: auto;
+}
+
+/* clip-path: propiedad que nos permite darle distintas formas geométricas a un elemento
+   el valor que se le da a esa propiedad, es la función de alguna forma geométrica: */
+
+.caja-2 {
+	background: #025;
+	height: 80px;
+	width: 80px;
+	margin: 20px;
+	display: flex;
+	color: #fff;
+
+	clip-path: polygon(22% 0, 65% 7%, 100% 66%, 75% 100%, 25% 100%, 0 13%);
+}

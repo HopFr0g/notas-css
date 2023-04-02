@@ -1,0 +1,102 @@
+* {
+	font-family: 'Poppins', sans-serif;
+	color: #00f;
+}
+
+/* Transition: propiedad que permite realizar transiciones dentro de los elementos
+   es decir, mostrar todos los frames de diferencia entre un estado y el siguiente */
+
+/* Se puede utilizar el shorthand "transition" o las siguientes propiedades por separado: */
+
+.main-section__h2 {
+	color: #0aa;
+	background: #00f;
+	padding: 30px;
+	display: inline-block;
+
+	/* con transition-property defino a qué propiedades aplicar la transición, se puede utilizar "all" o "none": */
+	/* No se recomienda utilizar "all" porque consume muchos recursos */
+	transition-property: background;
+	/* con transition-duration se especifica la duración de la transición: */
+	transition-duration: 3s;
+
+	/* las transiciones se realizan cuando ocurre un evento sobre el elemento (ejemplo de eventos: hover, onclick, etc.) */
+
+	/* con transition-delay puedo definir el tiempo que tiene que ocurrir después del evento para que empiece la transición */
+	transition-delay: 2s;
+
+}
+
+.main-section__h2:hover {
+	background: #f00;
+}
+
+/* transition-timing-function define la aceleración de la transición (velocidad de la transición en función del tiempo)
+   las opciones disponibles son:
+   - linear
+   - ease
+   - ease-in
+   - ease-out
+   - ease-in-out
+   - step-start
+   - step-end
+   PARA MÁS INFORMACIÓN SOBRE ESTO, LEER EN INTERNET SOBRE "CURVAS DE BÉZIER" */
+
+.container-bezier {
+	width: 80%;
+	margin: auto;
+	border: 6px solid #000;
+}
+
+.container-bezier p {
+	text-align: center;
+	font-size: 32px;
+}
+
+.demostracion-bezier {
+	width: 500px;
+	height: 70px;
+	text-align: center;
+	color: #66f;
+	font-size: 24px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+
+	background: #400;
+
+	transition-property: background left;
+	transition-duration: 2s;
+}
+
+.container-bezier:hover > .demostracion-bezier {
+	background: #0f0;
+	width: 100%;
+}
+
+.linear {
+	transition-timing-function: linear;
+}
+
+.ease {
+	transition-timing-function: ease; /* valor por defecto */
+}
+
+.easein {
+	transition-timing-function: ease-in;
+}
+
+.easeout {
+	transition-timing-function: ease-out;
+}
+
+.easeinout {
+	transition-timing-function: ease-in-out;
+}
+
+.stepstart {
+	transition-timing-function: step-start;
+}
+
+.stepend {
+	transition-timing-function: step-end;
+}

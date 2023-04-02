@@ -1,0 +1,36 @@
+* {
+	font-family: 'Poppins', sans-serif;
+}
+
+body {
+	background: radial-gradient(circle, #999, #ddd);
+}
+
+/* un grid-area es un rectangulo formado por celdas, un área tiene como mínimo 2 celdas */
+
+.grid-container {
+	background-color: #444;
+	display: grid;
+
+	/* del siguiente modo se dan nombres a las líneas que delimitan cada renglón y cada columna: */
+	grid-template-rows: [first-line] 150px [second-line] 150px [third-line] 150px [fourth-line];
+	/* la característica de nombrar líneas se puede aprovechar para determinar los límites de cada sección: */
+	grid-template-columns: [comienzo-aside] 150px [fin-aside] 150px 150px [fin-main];
+}
+
+.grid-item {
+	border: 1px solid #000;
+}
+
+.grid-item:first-child {
+	/* puedo utilizar los nombres de las filas y columnas para determinar los límites de un item: */
+	grid-row: first-line / third-line;
+
+	background-color: #b34;
+}
+
+/* shorthands - están disponibles los siguientes shorthands:
+- grid-template: row / columns; (grid-container)
+- grid-template: area unidad;
+
+no vale la pena aprenderla, es más claro definir estas propiedades por separado */

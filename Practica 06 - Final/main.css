@@ -1,0 +1,473 @@
+:root {
+	--color-principal: #b22;
+	--color-claro: #d44;
+	--color-muy-claro: #fbb;
+	--color-oscuro: #411;
+	--color-muy-oscuro: #200;
+	--color-fondo: #111;
+	--color-fondo-claro: #222;
+	--color-texto: #ccc;
+	--color-texto-seleccionado: #999;
+	--color-reservado: #215;
+
+	--fuente-principal: 'Poppins';
+	--fuente-titulos: 'Kaushan Script';
+}
+
+* {
+	font-family: var(--fuente-principal), sans-serif;
+	color: var(--color-texto);
+}
+
+body {
+	background: var(--color-fondo);
+}
+
+/* Diseño mobile first */
+
+.content {
+	min-height: 100vh;
+
+	display: flex;
+	flex-direction: column;
+
+	position: relative;
+}
+
+.header {
+	background: var(--color-principal);
+	height: 80px;
+
+	position: relative;
+	z-index: 10000;
+}
+
+.header h1 {
+	font-family: var(--fuente-titulos), sans-serif;
+	text-align: center;
+}
+
+.nav {
+	background: var(--color-oscuro);
+	height: 80px;
+
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+}
+
+.nav-normal {
+	display: none;
+}
+
+.nav-responsive {
+	width: 100%;
+	height: 100%;
+
+	position: relative;
+	z-index: 1200;
+}
+
+.nav-responsive__button-container {
+	background: var(--color-oscuro);
+	width: 100%;
+	height: 100%;
+
+	position: absolute;
+	z-index: 1500;
+
+	text-align: left;
+}
+
+.nav-responsive__button {
+	font-size: 24px;
+	padding: 28px 12px;
+}
+
+.nav-responsive__a-container {
+	background: var(--color-muy-oscuro);
+	box-shadow: 0 2px 20px 0 var(--color-fondo);
+
+	width: 100%;
+
+	position: relative;
+	bottom: 100vh;
+	z-index: 900;
+
+	transition: transform .6s ease;
+}
+
+.nav-responsive__a {
+	display: block;
+
+	padding: 12px 8px;
+	text-decoration: none;
+}
+
+.nav-responsive__a:hover {
+	background: var(--color-oscuro);
+}
+
+.nav-responsive__a i {
+	width: 35px;
+	text-align: center;
+}
+
+.nav-responsive:hover > .nav-responsive__a-container {
+	transform: translateY(calc(100vh + 80px));
+}
+
+.article {
+	position: relative;
+	z-index: 100;
+	pointer-events: none;
+}
+
+.article-1, .article-2 {
+	background: var(--color-fondo);
+	pointer-events: fill;
+	padding: 8px;
+}
+
+.article-1 {
+	margin-bottom: 400px;
+}
+
+.article__main-title {
+	font-size: 20pt;
+	margin: 10px 0;
+	text-align: center;
+}
+
+.article__text {
+	font-size: 12pt;
+	margin-bottom: 25px;
+	text-align: justify;
+}
+
+.article__subtitle {
+	font-size: 16pt;
+	margin: 8px 0;
+}
+
+.article__img {
+	margin: 8px;
+	text-align: center;
+}
+
+.article__img p {
+	font-size: 10pt;
+}
+
+.article__final-title {
+	font-size: 14pt;
+	margin: 4px 0;
+}
+
+.article__final-text {
+	font-size: 11pt;
+}
+
+.ad {
+	height: 400px;
+	width: 100%;
+
+	position: fixed;
+	top: 100px;
+	z-index: 10;
+}
+
+.ad__img {
+	background: var(--color-muy-oscuro);
+	height: 250px;
+	width: 300px;
+	margin: auto;
+	/* Estas dos propiedades son temporales, quitarlas cuando se agregue una imagen real y se quiten los textos: */
+	text-align: center;
+	padding: 8px;
+}
+
+.ad__img:hover {
+	background: var(--color-oscuro);
+}
+
+.ad__h3, .ad__p {
+	text-align: center;
+}
+
+.ad__h3 {
+	margin: 8px;
+}
+
+.aside {
+	background: var(--color-fondo);
+	padding: 16px 8px;
+	position: relative;
+	z-index: 500;
+}
+
+.aside__title {
+	width: 100%;
+	margin: 4px;
+}
+
+.aside__title h3 {
+	text-align: center;
+	padding: 6px;
+}
+
+.aside__suggestion {
+	height: 150px;
+	display: flex;
+	flex-direction: row;
+}
+
+.aside__suggestion-leftarrow, .aside__suggestion-rightarrow {
+	background: var(--color-oscuro);
+	align-self: center;
+	display: inline-block;
+	min-width: 30px;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.aside__suggestion-leftarrow:hover, .aside__suggestion-rightarrow:hover {
+	background: var(--color-principal);
+}
+
+.aside__suggestion-img {
+	flex-grow: 1;
+	flex-shrink: 1.5;
+	padding: 5px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.aside__suggestion-img img {
+	max-height: 100%;
+}
+
+.aside__suggestion-text {
+	flex-grow: 1;
+	flex-shrink: 1;
+	padding: 5px;
+	align-self: center;
+}
+
+.footer {
+	background: var(--color-muy-oscuro);
+	min-height: 80px;
+
+	position: relative;
+	z-index: 300;
+
+	flex-grow: 1;
+
+	text-align: center;
+
+	padding: 10px;
+}
+
+.footer h6 {
+	margin: 2px;
+}
+
+.footer h6 a {
+	text-decoration: none;
+}
+
+.footer h6 a i {
+	margin: 2px;
+}
+
+/* Diseño tablet: */
+
+@media screen and (min-width: 600px) and (max-width: 940px) {
+	.content {
+		/* El contenedor ya es flex originalmente, solo cambio unas propiedades: */
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+
+	.header {
+		width: 100%;
+		order: 0;
+	}
+
+	.nav {
+		width: 100%;
+		order: 1;
+	}
+
+	.article {
+		width: 350px;
+		flex-grow: 1;
+		order: 2;
+	}
+
+	.aside {
+		width: 250px;
+		order: 3;
+		background: var(--color-fondo-claro);
+	}
+
+	.aside__suggestion {
+		height: 100%;
+		width: 100%;
+		/* El contenedor ya es flex originalmente, solo cambio unas propiedades: */
+		flex-direction: column;
+		justify-content: flex-start;
+	}
+
+	.aside__suggestion-leftarrow, .aside__suggestion-rightarrow {
+		display: none;
+	}
+
+	.aside__suggestion-img {
+		align-self: center;
+		flex-grow: 0;
+	}
+
+	.aside__suggestion-text {
+		text-align: center;
+		flex-grow: 0;
+	}
+
+	.footer {
+		width: 100%;
+		order: 4;
+	}
+
+	.ad {
+		order: 5;
+		width: calc(100vw - 250px);
+	}
+}
+
+/* Adaptación a pantallas anchas: */
+
+@media screen and (min-width: 940px) {
+
+	.content {
+		width: 100%;
+		display: grid;
+		grid-template-columns: 300px 1fr 300px;
+		grid-template-rows: 80px 80px minmax(250px, max-content) minmax(80px, 1fr);
+	}
+
+	.header, .article, .ad, .aside, .footer {
+		position: static;
+		height: 100%;
+		width: 100%;
+	}
+
+	.header {
+		width: 100%;
+
+		grid-column: 1 / span 3;
+		grid-row: 1 / 2;
+	}
+
+	.nav {
+		width: 100%;
+
+		grid-column: 1 / span 3;
+		grid-row: 2 / 3;
+	}
+
+	.nav-normal {
+		display: flex;
+		height: 100%;
+		width: 100%;
+		position: relative;
+	}
+
+	.nav-normal__a {
+		flex-grow: 1;
+		text-decoration: none;
+		height: 100%;
+		width: 200px;
+		padding: 8px;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.nav-normal__a:hover {
+		background: var(--color-principal);
+	}
+
+	.nav-normal__a i {
+		margin: 8px;
+	}
+
+	.nav-responsive {
+		display: none;
+	}
+
+	.article {
+		grid-column: 2 / 3;
+		grid-row: 3 / 4;
+	}
+
+	.article-1 {
+		margin-bottom: 0;
+		padding-bottom: 0;
+	}
+
+	.aside, .ad {
+		padding: 20px;
+	}
+
+	.aside {
+		grid-column: 1 / 2;
+		grid-row: 3 / 4;
+		background: var(--color-fondo-claro);
+	}
+
+	.aside__suggestion {
+		height: 100%;
+		width: 100%;
+		/* El contenedor ya es flex originalmente, solo cambio unas propiedades: */
+		flex-direction: column;
+		justify-content: flex-start;
+	}
+
+	.aside__suggestion-leftarrow, .aside__suggestion-rightarrow {
+		display: none;
+	}
+
+	.aside__suggestion-img {
+		align-self: center;
+		flex-grow: 0;
+	}
+
+	.aside__suggestion-img img {
+		max-width: 100%;
+	}
+
+	.aside__suggestion-text {
+		text-align: center;
+		flex-grow: 0;
+	}
+
+	.ad {
+		grid-column: 3 / 4;
+		grid-row: 3 / 4;
+		background: var(--color-fondo-claro);
+	}
+
+	.ad__img {
+		height: 400px;
+		width: 240px;
+	}
+
+	.footer {
+		width: 100%;
+		grid-column: 1 / span 3;
+		grid-row: 4 / 5;
+	}
+}

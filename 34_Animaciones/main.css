@@ -1,0 +1,123 @@
+* {
+	font-family: 'Poppins', sans-serif;
+}
+
+.container-1, .container-2, .container-3 {
+	background: #a6d;
+}
+
+.container-1, .container-3 {
+	padding: 20px;
+}
+
+.container-2 {
+	height: 400px;
+	width: 400px;
+	margin: 30px auto;
+	position: relative;
+}
+
+/* Las animaciones funcionan similar a las transiciones, pero requieren de una regla llamada @keyframes */
+/* Se utiliza @keyframes [nombre de la animacion] {   } */
+
+@keyframes desplazarse {
+	/* la primera forma de definir cómo se va a comportar una animación es con from {   } y to {   } */
+
+	from {
+		/* en from se ponen todas las propiedades que tiene el elemento cuando COMIENZA la animación */
+		width: 80px;
+	}
+
+	to {
+		/* en to se ponen todas las propiedades que tiene el elemento cuando TERMINA la animación */
+		width: 100%;
+	}
+}
+
+.caja-1 {
+	background: #309;
+	height: 80px;
+	width: 80px;
+
+	/* Ahora, definir qué elemento tendrá la animación. Para esto, darle la propiedad "animation-name" al elemento deseado */
+	animation-name: desplazarse;
+
+	/* Para definir la duración de la animación se utiliza el parámetro "animation-duration" */
+	animation-duration: 3s;
+}
+
+@keyframes agrandarse {
+	/* otra forma de definir el comportamiento de una animación es utilizando porcentajes */
+
+	0% {
+		width: 10%;
+		height: 10%;
+	}
+
+	/* el beneficio que tiene esto, es que permite definir más instantes que solo el inicial y el final */
+
+	50% {
+		width: 30%;
+		height: 30%;
+	}
+
+	100% {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.caja-2 {
+	background: #309;
+	
+	/* combinación de propiedades para que la caja esté centrada: */
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+
+	/* a esta caja, se le dará la animación de "agrandarse" creada anteriormente */
+	animation-name: agrandarse;
+	animation-duration: 3s;
+
+	/* la aceleración (velocidad de la animación en función del tiempo) se define con la propiedad "animation-timing-function" */
+	/* los valores que puede tomar esta propiedad son los mismos vistos en "transiciones" (ease, ease-in, linear, etc) */
+	animation-timing-function: ease-in;
+
+	/* con animation-iteration-count se define la cantidad de veces que se repetirá la animación */
+	/* se le puede definir un número finito de veces, o también darle el valor infinite */
+	animation-iteration-count: 3;
+
+	/* con "animation-direction" defino en qué sentido se realizará la animación, puede tomar, los siguientes valores:
+	- normal: va de principio a fin
+	- reverse: va de fin a principio
+	- alternate: va de principio a fin y, luego, de fin a principio */
+	animation-direction: alternate;
+
+	/* animation-fill-mode define cómo va a quedar el elemento luego de terminar la animación, tiene los valores:
+	- none: luego de terminar la animación, volverá a la normalidad
+	- backwards: el elemento tomará las propiedades dadas en el primer fotograma clave
+	- forwards: el elemento se queda como definimos en la última instancia de la animación
+	- both: arrancará con las propiedades definidas al comienzo, y quedará con las propiedades definidas al final */
+	animation-fill-mode: both;
+
+	/* animation-delay: cuánto tardará la animación en iniciar */
+	animation-delay: 1s;
+}
+
+.caja-3 {
+	background: #309;
+	height: 80px;
+	width: 80px;
+	animation-name: desplazarse;
+	animation-duration: 3s;
+
+	/* como ya se explicó en el tema anterior, transition-timing-function y animation-timing-function definen la
+	aceleración siguiendo "curvas de Bezier". Nosotros podemos personalizar la curva de esta manera */
+	/* Suponiendo una curva de bezier con extremos A y B, así se definen las coordenadas x,y de sus extremos:
+	animation-timing-funcion: cubic-bezier(xA, yA, xB, yB) */
+	animation-timing-function: cubic-bezier(0.0, 0.0, 1.0, 1.0);
+	/* desde "inspeccionar elemento" en un navegador, podemos ver cómo quedó la curva de bezier resultante */
+}

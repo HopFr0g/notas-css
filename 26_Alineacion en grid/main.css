@@ -1,0 +1,167 @@
+* {
+	font-family: 'Poppins', sans-serif;
+	font-size: 24px;
+}
+
+body {
+	background: radial-gradient(circle, #fff, #ccc);
+	padding: 10px;
+}
+
+h2 {
+	margin-top: 25px;
+	margin-bottom: 10px;
+}
+
+p {
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+
+/* la propiedad justify-items se aplica a los grid-container y hace efectos sobre la posición que tendrán todos
+los grid-items pertenecientes a ese container. JUSTIFY-ITEMS JUSTIFICA LOS ITEMS HORIZONTALMENTE */
+
+.center-justified-container {
+	display: grid;
+
+	grid-template-columns: repeat(3, minmax(100px, 1fr));
+	grid-template-rows: repeat(3, 200px);
+
+	border: 4px solid #000;
+	background-color: #333;
+
+	grid-auto-rows: 200px;
+	grid-auto-flow: dense;
+
+	/* con justify-items: center; los ítems se posicionarán de modo que queden en el centro de cada columna */
+	justify-items: center;
+}
+
+.start-justified-container {
+	display: grid;
+
+	grid-template-columns: repeat(3, minmax(100px, 1fr));
+	grid-template-rows: repeat(3, 200px);
+
+	border: 4px solid #000;
+	background-color: #333;
+
+	grid-auto-rows: 200px;
+	grid-auto-flow: dense;
+
+	/* con justify-items: start; los ítems se posicionarán al comienzo de cada columna */
+	justify-items: start;
+}
+
+.end-justified-container {
+	display: grid;
+
+	grid-template-columns: repeat(3, minmax(100px, 1fr));
+	grid-template-rows: repeat(3, 200px);
+
+	border: 4px solid #000;
+	background-color: #333;
+
+	grid-auto-rows: 200px;
+	grid-auto-flow: dense;
+
+	/* justify-items: end; es similar a start, pero al final de cada columna */
+	justify-items: end;
+}
+
+.stretch-justified-container {
+	display: grid;
+
+	grid-template-columns: repeat(3, minmax(100px, 1fr));
+	grid-template-rows: repeat(3, 200px);
+
+	border: 4px solid #000;
+	background-color: #333;
+
+	grid-auto-rows: 200px;
+	grid-auto-flow: dense;
+
+	/* justify-items: stretch; es la propiedad por defecto, hará que los ítems ocupen todo el ancho de la columna */
+	justify-items: stretch;
+}
+
+/* la propiedad align-items es similar a justify-items, pero alinea a los items VERTICALMENTE */
+
+.center-aligned-container {
+	display: grid;
+
+	grid-template-columns: repeat(3, minmax(100px, 1fr));
+	grid-template-rows: repeat(3, 200px);
+
+	border: 4px solid #000;
+	background-color: #333;
+
+	grid-auto-rows: 200px;
+	grid-auto-flow: dense;
+
+	align-items: center;
+}
+
+.start-aligned-container {
+	display: grid;
+
+	grid-template-columns: repeat(3, minmax(100px, 1fr));
+	grid-template-rows: repeat(3, 200px);
+
+	border: 4px solid #000;
+	background-color: #333;
+
+	grid-auto-rows: 200px;
+	grid-auto-flow: dense;
+
+	align-items: start;
+}
+
+.end-aligned-container {
+	display: grid;
+
+	grid-template-columns: repeat(3, minmax(100px, 1fr));
+	grid-template-rows: repeat(3, 200px);
+
+	border: 4px solid #000;
+	background-color: #333;
+
+	grid-auto-rows: 200px;
+	grid-auto-flow: dense;
+
+	align-items: end;
+}
+
+.stretch-aligned-container {
+	display: grid;
+
+	grid-template-columns: repeat(3, minmax(100px, 1fr));
+	grid-template-rows: repeat(3, 200px);
+
+	border: 4px solid #000;
+	background-color: #333;
+
+	grid-auto-rows: 200px;
+	grid-auto-flow: dense;
+
+	align-items: stretch;
+}
+
+/* en caso de que sobre espacio vacío en el container, será útil justificar y alinear las columnas y filas.
+la propiedad justify-content justifica las COLUMNAS
+la propiedad align-content alinea las FILAS
+los valores que pueden tomar estas propiedades son start, end, center, stretch.
+
+justify-content y align-content también acepta los valores space-around, space-evenly y space-betwen
+ya explicados en flex */
+
+/* Cada item se puede alinear VERTICALMENTE dándole un valor a la propiedad align-self
+Cada item se puede justificar HORIZONTALMENTE dándole un valor a la propiedad justify-self */
+
+/* order funciona igual que en flex */
+
+.grid-item {
+	border: 1px solid #000;
+	background-color: #999;
+	font-size: 32px;
+}

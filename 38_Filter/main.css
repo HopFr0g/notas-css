@@ -1,0 +1,53 @@
+.container-1 {
+	display: inline-block;
+	/* filter es una propiedad que permite darle filtros y efectos a las imagenes */
+	/* los valores que puede tomar esta propiedad, son las funciones: 
+	   - blur(px); desenfoque
+	   - brightness(0-1); brillo
+	   - contrast(number or %);
+	   - drop-shadow(x y grosor_sombra color); es una sombra que trbaja bien en imagenes con fondo transparente
+	   - grayscale(%); escala de grises
+	   - hue-rotate(deg); rota los colores
+	   - invert(%); invierte los colores en el porcentaje dado
+	   - opacity(%); opacidad
+	   - saturate(%); saturación
+	   - sepia(%); convierte la imagen en sepia
+	   - url("filters.svg#filter-id"); 
+	   - entre otras */
+	filter: blur(3px) brightness(1.2) contrast(80%) drop-shadow(10px 10px 5px #f00);
+}
+
+.container-1:hover {
+	filter: none;
+}
+
+/* Efecto piola: */
+
+.container-2 {
+	filter: contrast(20);
+	background-color: #fff;
+}
+
+.caja {
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	background: #b33;
+	border-radius: 50%;
+	margin: 20px;
+	filter: blur(20px);
+}
+
+.caja-movil {
+	animation: trasladar 2s linear alternate infinite;
+}
+
+@keyframes trasladar {
+	0% {
+		transform: translateX(0);
+	}
+
+	100% {
+		transform: translateX(80px);
+	}
+}
