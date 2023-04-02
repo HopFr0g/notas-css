@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Metodologia BEM</title>
+		<link rel="stylesheet" type="text/css" href="main.css">
+	</head>
+	<body>
+		<!-- Ejemplo de cómo nombrar a las clases cuando un elemento está contenido dentro de otro, siguiendo la metodología BEM -->
+		
+		<!-- Ejemplo más básico, cuando un elemento está contenido dentro de otro, el nombre de su clase debe ser: -->
+		<!-- [nombre de la clase del elemento que lo contiene]__[nombre de la clase de ese elemento] -->
+		<div class="form">
+			<input type="text" value="test" class="form__input">
+		</div>
+
+		<br>
+
+		<!-- Ejemplo más complejo, donde habrá varios inputs y queremos que el primero sea distinto a los demas -->
+		<!-- Eso se logra por medio de agregar :first-child al final del nombre de la clase, (no aquí sino en en main.css) -->
+		<div class="contact-form">
+			<input type="text" value="test" class="contact-form__input">
+			<input type="text" value="test" class="contact-form__input">
+			<input type="text" value="test" class="contact-form__input">
+			<input type="text" value="test" class="contact-form__input">
+		</div>
+
+		<br>
+
+		<!-- Otra forma de seleccionar solo un elemento de la clase en CSS es agregando, aquí, al final del nombre de la clase -->
+		<!-- dos guiones "--" con un identificador (un nombre cualquiera, puesto por nosotros) -->
+		<div class="ticket-form">
+			<input type="text" value="test" class="ticket-form__input">
+			<input type="text" value="test" class="ticket-form__input--active">
+			<input type="text" value="test" class="ticket-form__input">
+			<input type="text" value="test" class="ticket-form__input">
+		</div>		
+
+		<br>
+		
+		<!-- Otro ejemplo -->
+		<div class="suscriber-form">
+			<p class="suscriber-form__p">
+				<h2 class="suscriber-form__p-h2">Título</h2>
+				<!-- Notar que la segunda vez que una clase contiene a otra, solo se usó "-" en lugar de "__" -->
+			</p>
+		</div>
+
+	</body>
+</html>

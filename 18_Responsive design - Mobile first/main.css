@@ -1,0 +1,49 @@
+* {
+	font-family: 'Poppins', sans-serif;
+}
+
+div {
+	display: inline-block;
+	width: 45%;
+	padding: 20px;
+}
+
+h1 {
+	font-size: 24px;
+}
+
+h2 {
+	font-size: 24px;
+}
+
+.seccion-bienvenida {
+	background-color: rgb(200, 255, 50);
+}
+
+.noticia-principal {
+	background-color: rgb(200, 80, 80);
+}
+
+/* Responsive design: adaptar un diseño a varias resoluciones */
+/* Mobile first: comenzar diseñando para la pantalla de un móvil, y luego adaptarlo para pantallas más grandes */
+
+/* Propiedades que toman los elementos cuando el ancho de la pantalla no alcanza los 800 pixeles: */
+@media only screen and (max-width: 800px) {
+	div {
+		display: block;
+		width: 100%;
+		/* de esta forma, cuando la pantalla sea muy delgada, cada div ocupará todo el ancho de la pantalla */
+		/* y cada seccion se vera una debajo de la otra */
+
+		/* VER EL HTML: Debo usar la etiqueta "meta viewport" para que se tengan en cuenta las dimensiones originales del dispositivo */
+	}
+
+	/* cambiar tamaño del texto cuando la pantalla es más delgada: */
+	.seccion-bienvenida__h1 {
+		font-size: 20px;
+	}
+
+	.noticia-principal__h2 {
+		font-size: 20px;
+	}
+}

@@ -1,0 +1,25 @@
+/* Metodología BEM: Permite evitar conflictos al momento de seleccionar elementos. */
+/* Consiste en basarse en el nombre de las clases para saber qué elemento se está seleccionando */
+
+/* Dirigirse a index.html para ver ejemplos de cómo nombrar a las clases */
+
+/* Así selecciono la clase de un input que está contenido dentro de un <div> con clase "form" */
+.form__input {
+	color: red;
+}
+
+/* Así selecciono SOLO el primero de varios inputs que están contenidos dentro de un <div> con clase "contact-form" */
+/* Lo que hice fue agregar :first-child al final para seleccionar solo al primer elemento de esa clase */
+.contact-form__input:first-child {
+	color: blue;
+}
+
+/* Otra forma de seleccionar solo un elemento de cierta clase es agregando, en HTML, al final del nombre de la clase, un --identificador */
+.ticket-form__input--active {
+	color: green;
+}
+
+/* Otro ejemplo de lo mismo */
+.suscriber-form__p-h2 {
+	color: brown;
+}

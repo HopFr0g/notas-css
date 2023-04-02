@@ -1,0 +1,72 @@
+* {
+	font-family: 'Poppins', sans-serif;
+	color: darkred;
+}
+
+/* box model: modelo en el que trabajamos las cajas.
+tiene propiedades como: content, padding, border, margin
+
+"content" refiere al contenido (por ejemplo texto) dentro de la caja, se modifica con line-height (cambia el tamaño de la linea)
+padding, border y margin se muestran más adelante en este mismo archivo
+
+jerarquía:
+1) content
+2) el padding está afuera del content (el texto). el padding es la distancia entre el contenido y los bordes de la caja
+3) el border está afuera del padding, son los límites del mismo
+4) el margin está por afuera del border */
+
+.main-section__h2 {
+	color: pink;
+	background-color: red;
+	display: inline-block; /* con inline-block se comporta como un elemento inline pero adquiere las propiedades de block */
+
+	/* padding: distancia entre los bordes de la caja y el texto; existen 4, uno para cada direccion de la caja */
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 50px;
+	padding-left: 50px;
+	/*
+	También se puede utilizar padding en alguna de sus variantes:
+	
+	padding: <top> <right> <bottom> <left>;
+	padding: <top> <right/left> <bottom>;
+	padding: <top/bottom> <left/right>;
+	padding: <una unica distancia para los 4 paddings>;
+	*/
+
+	/* Con height y width defino las dimensiones de la caja del elemento que estoy modificando actualmente */
+	height: 100px;
+	width: 100px;
+	/* Si se encuentra la propiedad de box-sizing: border-box; y a su vez se está usando un padding, lo que pasará es que el
+	ancho y alto real serán mayores al height y width definidos y, entonces, la caja se verá deforme (la solución sería aumentar height y width)
+	si, en cambio, se usa box-sizing: content-box; la caja se verá bien ya que el padding se suma por fuera del width y height */
+	box-sizing: content-box;
+
+	/* text-align: center; orienta al texto en el centro de la caja */
+	text-align: center;
+
+	/* margin: distancia entre una caja y las demás. */
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-right: 5px;
+	margin-left: 5px;
+	/*
+	También se puede utilizar padding en alguna de sus variantes:
+	
+	margin: <top> <right> <bottom> <left>;
+	margin: <top> <right/left> <bottom>;
+	margin: <top/bottom> <left/right>;
+	margin: <una unica distancia para los 4 paddings>;
+	*/
+
+	/* con border-radius defino cuántos píxeles redondear las esquinas de la caja */
+	border-radius: 10px;
+	/* también podría usar porcentajes, y redondearlo por completo con border-radius: 50%; */
+	border-radius: 50%;
+	/* También se pueden usar unidades relativas como "em" y todas las demás */
+
+	/* Con border se puede cambiar las propiedades de los bordes
+	border: <grosor del borde> <estilo del borde (dotted, double, solid, etc)> <color>; */
+	border: 5px dashed black;
+}
+

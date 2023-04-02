@@ -1,0 +1,130 @@
+* {
+	font-family: 'Poppins', sans-serif;
+	font-weight: 100;
+}
+
+/* hacer que, por default, la lista con enlaces del menú responsive esté oculta */
+.nav__responsive-ul {
+	display: none;
+}
+/* propiedades del nav (la barra de navegacion, la cual contiene una lista de iconos y enlaces) */
+.nav {
+	background-color: rgb(200, 50, 50);
+}
+
+
+/* propiedades de los items <li> que se encuentran en nuestro nav */
+.nav__li {
+	display: inline-block; /* para que los items (los enlaces e iconos de la lista) se muestren uno al lado del otro */
+	padding: 12px;
+	color: rgb(255, 255, 255); /* color que tomarán solo los íconos */
+}
+/* propiedades de los enlaces <a> (los cuales se encuentran en cada item de nuestro nav) */
+.nav__li a {
+	color: rgb(255, 255, 255);
+	text-decoration: none;
+}
+/* propiedades de los iconos <i> (los cuales se encuentra en cada item de nuestro nav) */
+.nav__li i {
+	box-sizing: border-box;
+	text-align: right;
+	margin-right: 5px;
+}
+/* cuando se haga hover sobre un "nav__li" > cambiar lo siguiente en el "a" de su interior: */
+.nav__li:hover > a {
+	color: rgb(150, 150, 150);
+}
+/* lo mismo de arriba, pero actúo sobre el "nav__li" para cambiar el color del ícono */
+.nav__li:hover{
+	color: rgb(150, 150, 150);	
+}
+
+/* propiedades de los contenedores del botón de menú desplegable: */
+
+.nav__responsive-button-container {
+	/* el contenedor del botón tendrá las mismas dimensiones del nav y se encontrará por encima del mismo */
+	position: absolute;
+	width: 100%;
+	font-size: 25px;
+	background-color: rgb(200, 50, 50); /* malo malo */
+	margin-top: -64px; /* para que comience 37+27 pixeles (que es la altura del nav + su padding) mas arriba (quedará encima del nav) */
+	z-index: 100;
+}
+
+.nav__responsive-button {
+	padding: 6px 20px;
+	text-align: left;
+	color: rgb(255, 255, 255);
+	width: 100%;
+}
+
+/* cuando el ancho de la pantalla sea inferior a 512px, ocultar los items de la barra de navegacion normal */
+/* y dar propiedades a los items de la barra de navegacion responsive */
+@media only screen and (max-width: 512px) {
+	/* ocultar los elementos que aparecen normalmente sobre la barra de navegacion (la que es para pantallas anchas): */
+	.nav__ul {
+		display: none;
+	}
+
+	.nav {
+		height: 37px; /* la altura justa para que solo entre el ícono de las barras para mostrar/ocultar el resto del menú */
+		width: 100%;
+		background-color: rgb(200, 50, 50); /* no es necesario, pues ya definí este mismo color para el .nav al comienzo */
+	}
+
+	/* propiedades de la lista con los items del menú responsive: */
+	.nav__responsive-ul {
+		display: block;
+		position: absolute;
+		width: 100%;
+		margin-top: 37px; /* debe comenzar 37 pixeles mas abajo, para que no esté encima de la barra de navegación (nav) */
+		padding-top: 27px;
+		height: 37px; /* para que solo ocupe los 37 pixeles superiores de la pantalla (si ocupa la pantalla entera, entonces el menú se desplegará cuando haga hover en cualquier lado) */
+	}
+
+	.nav__li-container {
+		position: relative; /* para que se posicione */
+		top: -1000px; /* por defecto tiene un top -1000px para que quede arriba de todo (no se vea en la pantalla) */
+		background-color: rgb(150, 50, 50);
+		
+		/* la altura 100vh significa 100% del viewport height */
+		/* pero a eso le resto los 37 pixeles que ocupa el nav */
+		/* esa operacion se realiza con la funcion calc() */
+		height: calc(100vh - 37px);
+		
+		transition: top 1s; /* para que tarde 1 segundo en cambiar de altura (una simple animacion) */
+		z-index: 1; /* le doy este valor de z-index para que quede debajo del button-container (que tiene z-index 100) */
+		
+		width: 75%;
+		padding-top: 27px;
+	}
+
+	/* estilos */
+	.nav__responsive-li {
+		width: 100%;
+		margin: 20px 0;
+	}
+	.nav__responsive-li i {
+		box-sizing: border-box;
+		text-align: center;
+		margin-right: 5px;
+		width: 30px;
+		color: rgb(255, 255, 255);
+	}
+	.nav__responsive-li a {
+		color: rgb(255, 255, 255);
+		text-decoration: none;
+	}
+	.nav__responsive-li:hover > a {
+		color: rgb(150, 150, 150);
+	}
+	.nav__responsive-li:hover > i{
+		color: rgb(150, 150, 150);	
+	}
+
+	/* mover el container con los items del menu, cuando se hace hover sobre nav__responsive-ul */
+	/* en un celular, el hover equivale a tocar esa parte de la pantalla */
+	.nav__responsive-ul:hover > .nav__li-container {
+		top: -27px; /* para que aparezca justo debajo del nav (que tiene un padding de 27px, por eso puse -27px) */
+	}
+}

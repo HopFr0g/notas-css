@@ -1,0 +1,19 @@
+/* Normalize es un archivo CSS donde se reinician las propiedades para no trabajar con las default de cada navegador,
+se puede descargar el .css e incluirlo en html con un <link>
+o hacer un <link> directamente a la dirección del servidor donde se encuentra alojado el archivo */
+
+/*
+
+Las propiedades que buscaremos y cambiaremos en el normalize.css descargado son:
+
+* {
+	box-sizing: border-box; para que la caja nunca exceda el tamaño que le definimos, incluso si le empezamos a agregar más propiedades
+	padding: 0;
+	margin: 0; Cuando una cantidad es 0 no hace falta poner unidades. Todo multiplicado por 0, es 0.
+}
+
+img {
+	max-width: 100%; hace que las imágenes nunca puedan exceder el ancho máximo de la pantalla, útil para páginas responsive
+}
+
+*/

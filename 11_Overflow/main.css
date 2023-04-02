@@ -1,0 +1,34 @@
+* {
+	font-family: 'Poppins', sans-serif;
+	color: blue;
+}
+
+.main-section__h2 {
+	color: darkcyan;
+}
+
+.main-section__p {
+	font-size: 24px;
+}
+
+/* Se llama overflow a la barra lateral que se utiliza para scrollear (bajar o subir) en la página
+La propiedad overflow se puede utilizar dentro de una caja, para controlar el contenido que sobra (que no entra en la caja) */
+
+.main-section {
+	margin: auto;
+	margin-top: 50px;
+	width: 300px;
+	height: 350px;
+	border: solid black;
+	background-color: cyan;
+
+	/* valores de overflow:
+	- visible: permite que todo el contenido que excede los limites se muestre en pantalla
+	- auto: permite scrollear dentro de la caja cuando su contenido excede los limites
+	- scroll: utiliza la barra de scroll siempre, independientemente de si hay contenido que excede los limites o no */
+	overflow: scroll;
+
+	/* overflow es un shorthand y se pueden utilizar sus dos propiedades por separado: overflow-x y overflow-y
+	- hidden: oculta la barra de scroll */
+	overflow-x: hidden;
+}

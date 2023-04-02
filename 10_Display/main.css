@@ -1,0 +1,51 @@
+* {
+	font-family: 'Poppins', sans-serif;
+	color: blue;
+}
+
+/* Propiedad display: modifica el comportamiento de cada caja en particular (y no la interacción entre las distintas cajas)
+
+Existen varios tipos:
+
+- block: bloques, son los elementos que ocupan todo el ancho del contenedor
+- inline: en linea, ocupan solo el ancho de su contenido
+
+- inline-block: se utiliza en bloques que no ocuparán todo el ancho, permite modificar el ancho y el alto de la caja de ese elemento
+
+- (poco frecuente) list-item: que se comporte como lista
+- (en desuso) table: que se comporte como tabla
+- (en desuso) inline-table: que se comporte como tabla en linea
+- (en desuso) table-cell: que se comporte como una única celda dentro de una tabla
+- (en desuso) table-row: que se comporte como una fila (o renglon) de una tabla
+- (en desuso) table-column: que se comporte como una columna de una tabla
+
+Se verán más adelante:
+
+- flex 
+- grid
+
+- inline-flex 
+- inline-grid */
+
+div {
+	margin: 20px;
+	border: 10px solid red;
+
+	background-color: cyan;
+	
+	width: 150px;
+	height: 150px;
+}
+
+.div-block {
+	display: block;
+}
+
+.div-inline {
+	display: inline;
+}
+
+.div-inlineblock {
+	display: inline-block;
+	width: 250px; /* solo en inline-block puedo modificar el ancho y el alto */
+}

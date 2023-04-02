@@ -1,0 +1,24 @@
+* {
+	font-family: 'Poppins', sans-serif;
+	color: darkcyan;
+	font-size: 20px;
+}
+
+.main-section {
+	margin: auto;
+	margin-top: 50px;
+	background: black;
+	border: 2px solid blue;
+
+	padding: 20px;
+
+	width: 50%;
+}
+
+.main-section__img {
+	width: 250px;
+	float: right;	/* la imagen estará a la derecha del contenedor, y el texto del contenedor rodeará a la misma */
+					/* el texto debe estar contenido, directamente, dentro del div (no usar la etiqueta <p>) */
+	margin-left: 20px;
+	margin-bottom: 20px;
+}

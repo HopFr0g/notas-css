@@ -1,0 +1,181 @@
+* {
+	font-family: 'Poppins', sans-serif;
+	color: black;
+}
+
+/* la propiedad align-self centra los items de acuerdo al cross-axis (por defecto es el eje vertical) */
+
+.align-container {
+	height: 120px;
+	width: 80%;
+	margin: 5px auto;
+	border: 1px solid rgb(0, 0, 0);
+	display: flex;
+	justify-content: center;
+}
+
+/* align-self: flex-start; posiciona los items arriba (en realidad, es al comienzo del cross-axis) */
+
+.start-aligned-item {
+	align-self: flex-start;
+
+	display: inline-block;
+	width: 200px;
+	margin: 10px auto;
+	background-color: rgb(0, 255, 0);
+}
+
+/* align-self: flex-end; posiciona los items abajo (en realidad, es al final del cross-axis) */
+.end-aligned-item {
+	align-self: flex-end;
+
+	display: inline-block;
+	width: 200px;
+	margin: 10px auto;
+	background-color: rgb(0, 255, 0);
+}
+
+/* align-self: center; posiciona los items en el centro del cross-axis */
+
+.center-aligned-item {
+	align-self: center;
+
+	display: inline-block;
+	width: 200px;
+	margin: 10px auto;
+	background-color: rgb(0, 255, 0);
+}
+
+/* align-self: stretch; estira el item para que ocupe todo el largo del cross-axis */
+
+.stretch-aligned-item {
+	align-self: stretch;
+
+	display: inline-block;
+	width: 200px;
+	margin: 10px auto;
+	background-color: rgb(0, 255, 0);
+}
+
+/* cuando estoy en un flex-item (es decir, un item contenido dentro de una caja con display: flex) y pongo el valor de
+un margin en auto (por ejemplo, margin-left: auto) el item se posicionará en el extremo opuesto a ese margin */
+
+.margin-container {
+	margin: 5px auto;
+	padding: 10px;
+	border: 1px solid black;
+	height: 350px;
+	width: 350px;
+	display: flex;
+}
+
+.margin-container div {
+	background-color: rgb(200, 50, 200);
+	width: 150px;
+	height: 150px;
+}
+
+.margin-item {
+	margin: auto;
+}
+
+.margin-right-item {
+	margin-right: auto;
+}
+
+.margin-left-item {
+	margin-left: auto;
+}
+
+.margin-bottom-item {
+	margin-bottom: auto;
+}
+
+.margin-top-item {
+	margin-top: auto;
+}
+
+/* cuando los flex-items se posicionan uno al lado del otro y sobra un espacio vacio al final
+la propiedad flex-grow: [valor]; define qué proporción de ese espacio vacío se llevará cada caja*/
+
+.grow-container {
+	width: 100%;
+	height: 300px;
+	margin: auto;
+	border: 1px solid rgb(0, 0 , 0);
+	padding: 5px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.grow-container div {
+	height: 100px;
+	min-width: 200px;
+	background-color: rgb(150, 100, 255);
+	margin: 5px;
+}
+
+.grow-1-item {
+	flex-grow: 1;
+}
+
+.grow-2-item {
+	flex-grow: 2;
+}
+
+/* flex-basis es una propiedad similar al "width" usado normalmente, pero tiene más propiedad que éste */
+
+/* cuando varios flex-items se encuentran juntos y están contenidos en poco espacio, tendrán que comprimirse
+(suponiendo que no haya un flex-wrap: wrap; porque en ese caso, en vez de comprimirse, se van más abajo)
+con la propiedad "flex-shrink" puedo definir la proporción del espacio que cada caja está dispuesta a comprimirse */
+.shrink-container {
+	width: 100%;
+	height: 300px;
+	margin: auto;
+	border: 1px solid rgb(0, 0 , 0);
+	padding: 5px;
+	display: flex;
+}
+
+.shrink-container div {
+	height: 100px;
+	width: 300px;
+	background-color: rgb(255, 100, 150);
+	margin: 5px;
+}
+
+.shrink-1-item {
+	flex-shrink: 1;
+}
+
+.shrink-2-item {
+	flex-shrink: 2;
+}
+
+/* flex es una propiedad que agrupa las propiedades flex-grow, flex-shrink y flex-basis */
+
+/* order: [valor]; mientras mayor sea el valor de la propiedad "order", más al final del main-axis estará ese item */
+.order-container {
+	width: 80%;
+	height: 200px;
+	margin: auto;
+	border: 1px solid rgb(0, 0 , 0);
+	padding: 5px;
+	display: flex;
+}
+
+.order-container div {
+	height: 100px;
+	width: 300px;
+	margin: 5px;
+}
+
+.order-1-item {
+	order: 1;
+	background-color: rgb(255, 230, 15);
+}
+
+.order-2-item {
+	order: 2;
+	background-color: rgb(53, 180, 120);
+}

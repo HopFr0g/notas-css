@@ -1,0 +1,27 @@
+* {
+	font-family: 'Poppins', sans-serif;
+	color: blue;
+}
+
+/* 
+Modelo de cajas:
+
+1) Cajas de bloque:
+Son las cajas más importantes, dividen a la página en bloques. Por defecto, siempre se ajustarán a TODO el ancho de su contenedor.
+
+2) Cajas en línea:
+Aquellos elementos que se ajustan solo al ancho de su propio contenido.
+
+Siempre que coloque un elemento a continuación de un elemento de bloque, el nuevo elemento irá abajo,
+porque el elemento de bloque ya está ocupando todo el ancho. En cambio, sí es posible colocar dos elementos en línea juntos.
+
+Se puede cambiar:
+Puedo hacer que un elemento que por default es un bloque, se ajuste al ancho de su contenido como los elementos en línea.
+Para esto se utiliza la propiedad "display" que permite cambiar el comportamiento de las cajas.
+*/
+
+.main-section__h2 {
+	display: inline; /* Las opciones son inline y block */
+}
+
+/* A los elementos en línea no se le pueden dar ciertas propiedades, como height, width */

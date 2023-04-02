@@ -1,0 +1,43 @@
+* {
+	font-family: 'Poppins', sans-serif;
+}
+
+body {
+	background: radial-gradient(circle, #fff, #ccc);
+	padding: 10px;
+}
+
+/* Cuando hay demasiados ítems a comparación de la cantidad de filas y columnas que definimos, los ítems sobrantes también
+se dibujarán pero tendrán propiedades distintas: tendrán las propiedades de un "grid implícito" */
+
+/* por defecto, esos items excedentes se crearán como una nueva fila (y no como una nueva columna) */
+
+.grid-container {
+	display: grid;
+	grid-template-columns: repeat(3, 100px);
+	grid-template-rows: repeat(3, 100px);
+
+	border: 4px solid #000;
+	background-color: #333;
+
+	/* para definir si quiero que los items sobrantes (los implícitos) sean una nueva fila o columna, uso grid-auto-flow */
+	grid-auto-flow: row; /* este es el valor por defecto, también pude haber usado "column" */
+
+	/* para definir el ancho que debe tener la fila conformada por aquellos items sobrantes (los implícitos) uso grid-auto-rows */
+	grid-auto-rows: 200px;
+
+	/* para que aquellos espacios intermedios vacíos (que se generan al cambiar las propiedades de algunos items) sean llenados, 
+	automáticamente, con los ítems más cercanos, debo usar la propiedad grid-auto-flow: dense;
+	también acepta los valores column, row, etc. */
+	grid-auto-flow: dense;
+}
+
+.grid-item:first-child {
+	grid-column: 1 / 7; /* cambio estas propiedades intencionalmente, para que queden espacios vacíos que sean completados
+								  con el grid-auto-flow: dense; */
+}
+
+.grid-item {
+	border: 1px solid #000;
+	background-color: #999;
+}

@@ -1,0 +1,78 @@
+* {
+	font-family: 'Poppins', sans-serif;
+	color: blue;
+}
+
+/* Un elemento posicionado, afecta al flujo HTML (el orden en que se colocan los elementos en la pagina)
+
+   Cuando posicionamos un elemento, aparecen 4 propiedades nuevas: top, bottom, left y right. Top y left son prioritarias
+   
+   Estos son los tipos:
+   
+    - static: es el default, un elemento static se considera como un elemento no posicionado
+   
+    - relative: los elementos html tienen un espacio reservado. Con relative, ese espacio se conserva.
+                las propiedades top, left, etc. se cuentan a partir del espacio reservado original que tenía ese elemento
+   
+    - absolute:  el espacio reservado que tenía la caja desaparece.
+                 las propiedades top, left, etc. se cuentan desde la esquina superior izquierda del contenedor
+                 si es que el contenedor está posicionado
+                 de lo contrario, o si no hay un contenedor, es a partir del viewport (la pantalla entera)
+                 con la posición absolute, aunque sea un elemento en bloque, se va a auto ajustar al tamaño de su contenido
+
+    - fixed: mismas propiedades que absolute, pero queda fijo en la pantalla (ocupa la misma posicion aunque scrollees hacia abajo)
+             Ejemplo: hacer un menú fixed que no tape el texto que tenga detras: ;
+             darle al "body" la propiedad padding-top: 100; y al menú fixed la propiedad margin: -100px;
+	
+	- sticky: similar al fixed, pero con la propiedad de relative para conservar su espacio reservado
+	          también debemos especificar una altura "top" para que el elemento se quede fixed una vez alcanzada la misma
+	
+    Cuando una caja está posicionada, se puede usar la propiedad z-index para definir su posición en el eje z
+    Sirve para definir qué elementos van al frente y qué elementos por atrás.
+    Mientras mayor sea el valor de z-index, más al frente estará la caja
+    Conflicto entre elementos padres e hijos: 
+    si un elemento está dentro del otro, es difícil lograr que el elemento hijo (el de adentro) quede debajo del elemento padre
+    la solución es hacer que el elemento hijo tenga un z-index de -1 y el elemento padre no tenga el z-index definido */
+
+.first-section {
+	background-color: cyan;
+	display: inline-block;
+	width: 400px;
+
+	position: relative;
+	top: 100px;
+	left: 50px;
+}
+
+.first-section__h1 {
+	background-color: darkcyan;
+	position: relative;
+	display: inline-block;
+	top: -50px;
+	left: -40px;
+	z-index: -1;
+}
+
+.second-section {
+	background-color: lightsalmon;
+	display: inline-block;
+	width: 400px;
+
+	position: absolute;
+	z-index: 10;
+}
+
+.third-section {
+	background-color: gold;
+	display: inline-block;
+	width: 400px;
+
+	position: sticky;
+	top: 0;
+	left: 600px;
+}
+
+.fourth-section__p {
+	background-color: lightgreen;
+	font-size: 120px;
+}

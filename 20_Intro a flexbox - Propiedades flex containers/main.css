@@ -1,0 +1,257 @@
+* {
+	font-family: 'Poppins', sans-serif;
+}
+
+/* Flexbox: "cajas flexibles" es un modo de maquetado */
+/* Flex requiere de dos cosas: un flex container y un flex item  */
+
+/* flexbox es un valor que puede tomar la propiedad display */
+/* un contenedor con display: flex; se comportará igual que un display: block; */
+/* lo que cambia es el comportamiento de los items de su interior */
+
+/* las posiciones de los elementos pueden seguir los siguientes flujos:
+	- main-axis (el eje x): va desde el main-start (izquierda) hacia el main-end (derecha)
+	- cross-axis (el eje y): va desde el cross-start (arriba) hacia el cross-end (abajo) */
+
+/* los flex items (es decir, los elementos que están dentro de un contenedor con display: flex) se ordenan automáticamente
+siguiendo un flujo de acuerdo a los ejes antes mencionados.
+Por default, los items se ordenarán en el main-axis (de izquierda a derecha) (esto se debe a la propiedad flex-direction: row) */
+
+.flex-container {
+	display: flex;
+}
+
+.flex-item {
+	background: rgb(64, 64, 127);
+	color: rgb(255, 255, 255);
+	padding: 5px;
+	margin: 20px;
+}
+
+/* a continuación se usará flex-direction: column; para que los items se ordenen uno debajo del otro */
+
+.flex-container-2 {
+	display: flex;
+	flex-direction: column; /* otras opciones serían row-reverse, column-reverse */
+}
+
+.flex-item-2 {
+	background: rgb(127, 64, 64);
+	color: rgb(255, 255, 255);
+	padding: 5px;
+	margin: 20px;
+}
+
+/* con la propiedad flex-wrap: wrap; puedo obligar a las cajas a mantener sus dimensiones, entonces,
+   si la pantalla reduce mucho su tamaño, las cajas que no entren se irán más abajo en lugar de comprimirse en el mismo lugar
+
+   la propiedad por defecto es flex-wrap: nowrap;
+
+   también puedo usar flex-wrap: wrap-reverse; para mover los elementos que no entren en la dirección contraria */
+.nowrap-container {
+	display: flex;
+}
+
+.nowrap-item {
+	background: rgb(255, 64, 0);
+	color: rgb(255, 255, 255);
+	text-align: center;
+	width: 256px;
+	height: 256px;
+	margin: 5px;
+}
+
+.wrap-container {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.wrap-item {
+	background: rgb(0, 64, 255);
+	color: rgb(255, 255, 255);
+	text-align: center;
+	width: 256px;
+	height: 256px;
+	margin: 5px;
+}
+
+/* además de width, se puede definir un min-width y, con flex-wrap: wrap, hacer que las cajas se compriman hasta cierto punto */
+/* también se pueden usar las propiedades max-width, min-height, max-height... */
+
+/* flex-direction y flex-wrap pueden resumirse en una sola propiedad llamada "flex-flow" */
+
+/* justify-content: propiedad que justifica o centra los items de acuerdo al main-axis (por defecto, el eje horizontal) */
+
+/* justify-content: flex-start; los items se justifican a la izquierda (en realidad, al comienzo del main-axis) */
+
+.start-justified-container {
+	display: flex;
+	justify-content: flex-start;
+}
+
+.start-justified-item {
+	background-color: rgb(255, 0, 0);
+	color: rgb(255, 255, 255);
+	margin: 10px;
+	width: 120px;
+	height: 120px;
+}
+
+/* justify-content: center; los items se centran */
+
+.center-justified-container {
+	display: flex;
+	justify-content: center;
+
+}
+
+.center-justified-item {
+	background-color: rgb(255, 0, 0);
+	color: rgb(255, 255, 255);
+	margin: 10px;
+	width: 120px;
+	height: 120px;
+}
+
+/* justify-content: space-around; similar a utilizar un margin-auto */
+
+.spacearound-justified-container {
+	display: flex;
+	justify-content: space-around;
+
+}
+
+.spacearound-justified-item {
+	background-color: rgb(255, 0, 0);
+	color: rgb(255, 255, 255);
+	margin: 10px;
+	width: 120px;
+	height: 120px;
+}
+
+/* justify-content: space-evenly; hace que la separación de las cajas (los márgenes) sean iguales */
+/* tanto entre una caja con sus vecinas, como también entre una caja y los bordes de la pantalla */
+
+.spaceevenly-justified-container {
+	display: flex;
+	justify-content: space-evenly;
+
+}
+
+.spaceevenly-justified-item {
+	background-color: rgb(255, 0, 0);
+	color: rgb(255, 255, 255);
+	margin: 10px;
+	width: 120px;
+	height: 120px;
+}
+
+/* justify-content: flex-end; justifica los items a la derecha (en realidad, al final del main-axis) */
+
+.end-justified-container {
+	display: flex;
+	justify-content: flex-end;
+
+}
+
+.end-justified-item {
+	background-color: rgb(255, 0, 0);
+	color: rgb(255, 255, 255);
+	margin: 10px;
+	width: 120px;
+	height: 120px;
+}
+
+/* align-items: propiedad que alinea o centra los items de acuerdo al cross-axis (que por defecto, es el eje vertical) */
+
+/* align-items: flex-start; los items se alinean arriba (en realidad, al comienzo del cross-axis) */
+
+.start-aligned-container {
+	display: flex;
+	align-items: flex-start;
+	height: 300px;
+	width: 80%;
+	margin: 5px auto;
+	border: 1px solid #000;
+}
+
+.start-aligned-item {
+	background-color: rgb(0, 0, 255);
+	color: rgb(255, 255, 255);
+	margin: 10px;
+	width: 120px;
+}
+
+/* align-items: flex-end; los items se alinean abajo (en realidad, al final del cross-axis) */
+
+.end-aligned-container {
+	display: flex;
+	align-items: flex-end;
+	height: 300px;
+	width: 80%;
+	margin: 5px auto;
+	border: 1px solid #000;
+}
+
+.end-aligned-item {
+	background-color: rgb(0, 0, 255);
+	color: rgb(255, 255, 255);
+	margin: 10px;
+	width: 120px;
+}
+
+/* align-items: center; los items se centran */
+
+.center-aligned-container {
+	display: flex;
+	align-items: center;
+	height: 300px;
+	width: 80%;
+	margin: 5px auto;
+	border: 1px solid #000;
+}
+
+.center-aligned-item {
+	background-color: rgb(0, 0, 255);
+	color: rgb(255, 255, 255);
+	margin: 10px;
+	width: 120px;
+}
+
+/* align-items: stretch; los items se estiran para ocupar todo el largo del cross-axis*/
+
+.stretch-aligned-container {
+	display: flex;
+	align-items: stretch;
+	height: 300px;
+	width: 80%;
+	margin: 5px auto;
+	border: 1px solid #000;
+}
+
+.stretch-aligned-item {
+	background-color: rgb(0, 0, 255);
+	color: rgb(255, 255, 255);
+	margin: 10px;
+	width: 120px;
+}
+
+/* align-items: baseline; */
+
+.baseline-aligned-container {
+	display: flex;
+	align-items: baseline;
+	height: 300px;
+	width: 80%;
+	margin: 5px auto;
+	border: 1px solid #000;
+}
+
+.baseline-aligned-item {
+	background-color: rgb(0, 0, 255);
+	color: rgb(255, 255, 255);
+	margin: 10px;
+	width: 120px;
+}
+
+/* align-content: tiene las mismas opciones que align-items, pero funciona cuando hay más de una línea de items */

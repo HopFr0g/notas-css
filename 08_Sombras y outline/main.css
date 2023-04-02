@@ -1,0 +1,42 @@
+* {
+	font-family: 'Poppins', sans-serif;
+	color: blue;
+}
+
+.main-section__h2 {
+	color: cyan;
+	background: darkblue;
+	height: 60px;
+	width: 300px;
+	text-align: center;
+	box-sizing: content-box;
+	display: inline-block;
+	margin: 10px;
+
+	/* box-shadow es una propiedad que nos permite darle sombra a la caja de un elemento, el uso correcto es: 
+	box-shadoW: <desplazamiento eje x> <desplazamiento eje y> <desenfoque de la sombra> <borde: generalmente 0> <color>; */
+	box-shadow: -10px 10px 20px 0 gray;
+
+	/* Se puede hacer lo mismo pero para textos, con text-shadow, el uso correcto es:
+	text-shadow: <desplazamiento eje x> <desplazamiento eje y> <color>; */
+	text-shadow: 10px 10px 10px white;
+
+}
+
+.main-section__img {
+	margin: 50px;
+
+	/* outline es un shorthand (propiedad acortada) que contiene outline-color, outline-width, etc
+	es decir, que se pueden definir estas propiedades por separado, o todas juntas con outline
+	outline es como el border ya visto pero que no afecta a las cajas, no ocupa un espacio real en el DOM (document object model)
+	el uso correcto es:
+	outline: <grosor> <estilo> <color>; */
+	outline: 10px dashed black;
+
+	/* Con outline-offset puedo definir cuántos pixeles por fuera o por dentro de la caja estará el borde */
+	outline-offset: -10px;
+}
+
+.main-section__img:hover {
+	outline-offset: 0;
+}

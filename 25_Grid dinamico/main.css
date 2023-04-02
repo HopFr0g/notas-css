@@ -1,0 +1,40 @@
+* {
+	font-family: 'Poppins', sans-serif;
+}
+
+body {
+	background: radial-gradient(circle, #fff, #ccc);
+	padding: 10px;
+}
+
+.grid-container {
+	display: grid;
+
+	/* otra forma de definir las dimensiones de las columnas y filas, es usando los valores min-content y max-content
+	estos son valores dinámicos que harán lo siguiente,
+	min-content: hace que la dimensión sea igual al contenido mínimo (si es texto, el contenido mínimo es una sola palabra)
+	max-content: hace que la dimensión sea igual al contenido máximo (si es texto, el contenido máximo es la línea entera)
+
+	también puedo usar función minmax() que recibe, como primer parámetro, la mínima dimensión que puede tomar la fila/columna
+	y, como segundo parámetro, la máxima dimensión a la que se puede estirar esa fila/columna
+
+	en los parámetros de minmax() puedo usar los valores min-content y max-content ya mencionados
+
+	a la hora de definir la cantidad de filas/columnas en el repeat() puedo utilizar, en lugar de un número fijo, los valores
+	auto-fill y auto-fit, que hacen lo siguiente
+	auto-fill: se crearán todas las filas/columnas posibles mientras cumplan con las dimensiones establecidas
+	auto fit: igual que auto-fill pero, después de colocar los elementos, se colapsarán las filas y columnas vacías */
+	grid-template-columns: repeat(auto-fill, minmax(max-content, 300px));
+	grid-template-rows: repeat(3, 150px);
+
+	border: 4px solid #000;
+	background-color: #333;
+
+	grid-auto-rows: 200px;
+	grid-auto-flow: dense;
+}
+
+.grid-item {
+	border: 1px solid #000;
+	background-color: #999;
+}

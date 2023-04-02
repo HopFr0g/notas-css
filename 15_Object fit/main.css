@@ -1,0 +1,68 @@
+* {
+	font-family: 'Poppins', sans-serif;
+	color: blue;
+}
+
+div {
+	position: relative;
+	margin: 10px;
+	display: inline-block;
+	border: 4px solid red;
+}
+
+div h2 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 5px;
+	background-color: cyan;
+}
+
+/* si se le da object-fit: contain; a la imagen, ésta tendrá su tamaño real, sin importar el tamaño del div que la contenga: */
+.contain-section {
+	width: 450px;
+	height: 450px;
+}
+
+.contain-section__img {
+	height: 100%;
+	width: 100%;
+	object-fit: contain;
+}
+
+/* con object-fit: cover; la imagen se ajusta al tamaño del contenedor: */
+.cover-section {
+	width: 450px;
+	height: 450px;
+}
+
+.cover-section__img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	object-position: bottom; /* cuando la imagen se recorta, uso object-position para definir qué lado de la imagen debe verse */
+}
+
+/* object-fit: none; usa las propiedades por defecto de la imagen: */
+.none-section {
+	width: 450px;
+	height: 450px;
+}
+
+.none-section__img {
+	height: 100%;
+	width: 100%;
+	object-fit: none;
+}
+
+/* object-fit: scale-down; elije el más conveniente (el tamaño más chico) entre none y contain: */
+.scaledown-section {
+	height: 450px;
+	width: 450px;
+}
+
+.scaledown-section__img {
+	height: 100%;
+	width: 100%;
+	object-fit: scale-down;
+}

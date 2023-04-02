@@ -1,0 +1,73 @@
+* {
+	font-family: 'Poppins', sans-serif;
+	color: blue;
+}
+
+.main-section {
+	width: 450px;
+	height: 450px;
+	box-sizing: border-box;
+	display: block;
+	padding: 10px;
+	margin: 50px auto;
+	border: 1px solid black;
+	transition: background-color 2s, width 1s, height 1s; /* uso esta propiedad para que los cambios no sean instantaneos */
+}
+
+.main-section-text {
+	width: 400px;
+	height: 400px;
+	margin: auto;
+	text-align: center;
+}
+
+.main-section-text__h4 {
+	margin: 10px auto;
+}
+
+.main-section-text__a {
+	margin: auto;
+	display: block;
+	margin: 5px auto;
+}
+
+/* las pseudoclases se aplican a un selector (como un elemento, una clase, etc) y funcionan para escuchar eventos */
+
+/* con hover, defino las propiedades que debe tener un elemento cuando el mouse está encima del mismo */
+/* hover funciona en cualquier elemento (no importa si es bloque, en linea, etc) */
+.main-section:hover {
+	background-color: greenyellow;
+	width: 600px;
+	height: 600px;
+}
+
+/* con las pseudoclases link y visited, cambio el formato de los links <a> que ya fueron visitados y los que no */
+.main-section-text__a:link {
+	color: red;
+}
+
+.main-section-text__a:visited {
+	color: hotpink;
+}
+
+/* active se aplica cuando mantenemos presionada una caja con el mouse */
+.main-section:active {
+	background-color: royalblue;
+}
+
+/* focus se utiliza para cambiar las propiedades de un input que está en foco */
+.main-section-text__input:focus {
+	background-color: cyan;
+	color: red;
+}
+
+/* la pseudoclase lang() es una funcion que recibe como parámetro el código de un lenguaje, para cambiar las propiedades de
+los elementos que se encuentren en dicho lenguaje. En el HTML se debe usar el atributo lang="" en aquellas etiquetas que tengan
+un lenguaje específico */
+.main-section-text__p:lang(es) {
+	background-color: green;
+}
+
+.main-section-text__p:lang(en) {
+	background-color: indianred;
+}

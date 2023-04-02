@@ -1,0 +1,30 @@
+.title-bar {
+	font-size: 12px;
+}
+
+.title-bar__h2 {
+	color: red;
+	font-size: 2em;
+	font-family: Georgia;
+	line-height: 2;
+	/* line-height se mide desde el centro de la letra. 1 line-height = 1/2 de la altura de la letra hacia arriba, 1/2 hacia abajo */
+	/* line-height define el espacio que ocupa el texto dentro de la caja que la contiene, no cambia el tamaño de los caracteres */
+	font-weight: 100;
+	/* font-weight cambia el grosor de las letras. Por ejemplo: 100, 400, 700, 900, etc. Depende de los grosores que tenga disponible la fuente que estamos usando */
+	font-stretch: normal;
+	/* font-stretch permite condensar o expandir el texto */
+	/* Se puede seleccionar entre normal, condensed, etc. Es bastante inutil */
+	font-variant: small-caps;
+	/* font-variant selecciona entre los aspectos normal y small-caps para la familia de fuente determinado. Es bastante inutil */
+}
+
+/* Cómo importat una fuente externa utilizando Google Fonts:
+1) Dirigirse a fonts.google.com
+2) Buscar la fuente y copiar la etiqueta <link> con la dirección donde se encuentra la fuente. Pegarla dentro del head de index.html
+3) Ahora ver el cuadro "CSS rules to specify families" donde indican cuál es el nombre de la fuente que debemos usar en CSS
+*) Si aparecen varias fuentes separadas por comas, es porque se utilizará la segunda fuente en caso de no encontrar la primera */
+
+.title-bar__h3 {
+	font-family: 'Kirang Haerang', cursive;
+	font-size: 2em;
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Tutorial</title>
+		
+		<link rel="stylesheet" type="text/css" href="main.css">
+		
+		<link rel="stylesheet" type="text/css" href="normalize.css">
+
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet"> 
+	</head>
+	<body>
+		<h2>flex-direction: row</h2>
+		
+		<div class="flex-container">
+			<p class="flex-item">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+			<p class="flex-item">No importa que un parrafo tenga más texto que el otro. Flex,
+			además de ubicar los párrafos uno al lado del otro,
+			se encargará de que ambos tengan la misma altura.</p>
+		</div>
+
+		<h2>flex-direction: column</h2>
+
+		<div class="flex-container-2">
+			<p class="flex-item-2">En estos dos párrafos se está usando flex-direction: column;
+			por lo que se orientan verticalmente (uno debajo del otro) en vez de horizontalmente</p>
+
+			<p class="flex-item-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		</div>
+
+		<h2>flex-wrap: nowrap</h2>
+
+		<div class="nowrap-container">
+			<div class="nowrap-item">Si reduces la ventana, estas cajas se comprimirán
+			pero seguirán una al lado de la otra (intentalo).</div>
+			<div class="nowrap-item">Si reduces la ventana, estas cajas se comprimirán
+			pero seguirán una al lado de la otra (intentalo).</div>
+			<div class="nowrap-item">Si reduces la ventana, estas cajas se comprimirán
+			pero seguirán una al lado de la otra (intentalo).</div>
+			<div class="nowrap-item">Si reduces la ventana, estas cajas se comprimirán
+			pero seguirán una al lado de la otra (intentalo).</div>
+		</div>
+
+		<h2>flex-wrap: wrap</h2>
+
+		<div class="wrap-container">
+			<div class="wrap-item">flex-wrap: wrap; Si reduces la ventana, estas cajas se moverán más abajo
+			para poder conservar su tamaño original (intentalo)</div>
+			<div class="wrap-item">flex-wrap: wrap; Si reduces la ventana, estas cajas se moverán más abajo
+			para poder conservar su tamaño original (intentalo)</div>
+			<div class="wrap-item">flex-wrap: wrap; Si reduces la ventana, estas cajas se moverán más abajo
+			para poder conservar su tamaño original (intentalo)</div>
+			<div class="wrap-item">flex-wrap: wrap; Si reduces la ventana, estas cajas se moverán más abajo
+			para poder conservar su tamaño original (intentalo)</div>
+		</div>
+
+		<h2>justify-content:</h2>
+
+		<div class="start-justified-container">
+			<div class="start-justified-item">justify-content: flex-start</div>
+			<div class="start-justified-item">justify-content: flex-start</div>
+			<div class="start-justified-item">justify-content: flex-start</div>
+		</div>
+		
+		<div class="center-justified-container">
+			<div class="center-justified-item">justify-content: center</div>
+			<div class="center-justified-item">justify-content: center</div>
+			<div class="center-justified-item">justify-content: center</div>
+		</div>
+		
+		<div class="spacearound-justified-container">
+			<div class="spacearound-justified-item">justify-content: space-around</div>
+			<div class="spacearound-justified-item">justify-content: space-around</div>
+			<div class="spacearound-justified-item">justify-content: space-around</div>
+		</div>
+
+		<div class="spaceevenly-justified-container">
+			<div class="spaceevenly-justified-item">justify-content: space-evenly</div>
+			<div class="spaceevenly-justified-item">justify-content: space-evenly</div>
+			<div class="spaceevenly-justified-item">justify-content: space-evenly</div>
+		</div>
+
+		<div class="end-justified-container">
+			<div class="end-justified-item">justify-content: flex-end</div>
+			<div class="end-justified-item">justify-content: flex-end</div>
+			<div class="end-justified-item">justify-content: flex-end</div>
+		</div>
+
+		<h2>align-content:</h2>
+
+		<div class="start-aligned-container">
+			<div class="start-aligned-item">align-items: flex-start</div>
+			<div class="start-aligned-item">align-items: flex-start</div>
+			<div class="start-aligned-item">align-items: flex-start</div>
+		</div>
+
+		<div class="end-aligned-container">
+			<div class="end-aligned-item">align-items: flex-end</div>
+			<div class="end-aligned-item">align-items: flex-end</div>
+			<div class="end-aligned-item">align-items: flex-end</div>
+		</div>
+
+		<div class="center-aligned-container">
+			<div class="center-aligned-item">align-items: center</div>
+			<div class="center-aligned-item">align-items: center</div>
+			<div class="center-aligned-item">align-items: center</div>
+		</div>
+
+		<div class="stretch-aligned-container">
+			<div class="stretch-aligned-item">align-items: stretch</div>
+			<div class="stretch-aligned-item">align-items: stretch</div>
+			<div class="stretch-aligned-item">align-items: stretch</div>
+		</div>
+
+		<div class="baseline-aligned-container">
+			<div class="baseline-aligned-item">align-items: baseline</div>
+			<div class="baseline-aligned-item">align-items: baseline</div>
+			<div class="baseline-aligned-item">align-items: baseline</div>
+		</div>
+	</body>
+</html>

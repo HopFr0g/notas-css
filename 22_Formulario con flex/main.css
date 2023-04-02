@@ -1,0 +1,86 @@
+/* Propiedades generales del texto: */
+* {
+	font-family: 'Poppins', sans-serif;
+	color: white;
+}
+
+/* Propiedades del body: */
+body {
+	background-color: #000;
+}
+
+/* Flex-container (es una caja que en su interior contiene 2 flex-items: un formulario y el contenedor de una imagen): */
+.flex-container {
+	background-color: #333;
+	padding: 20px;
+	margin: 40px;
+	min-width: 500px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+/* Primer flex-item: es un div que adentro suyo contiene (varios divs con) una imagen: */
+.form-img {
+	min-width: 350px;
+	min-height: 350px;
+	max-width: 30%;
+	padding: 10px;
+	margin: auto;
+	order: 0;
+	display: flex; /* este div también es un flex-container, así puedo centrar el div de su interior usando margin: auto; */
+}
+
+/* div que contiene a otro div con la imagen en su interior: */
+.img-container {
+	margin: auto;
+	padding: 10px;
+}
+
+/* div que contiene a la imagen: */
+.img-container div {
+	padding: 40px;
+	background-color: #fff;
+	border-radius: 50%;
+	text-align: center; /* para que la imagen en el interior de este div esté centrada */
+}
+
+/* imagen: */
+.img-container div img {
+	width: 80%;
+}
+
+/* Segundo flex-item: es un form que adentro suyo contiene inputs */
+.form {
+	min-width: 60%;
+	flex-grow: 1;
+	order: 1;
+	padding: 20px;
+}
+
+/* Propiedades de los divs que contienen a cada input y textarea: */
+.form__section {
+	margin: 5px;
+}
+
+/* Propiedades de los inputs y del textarea (todos tienen la clase form__input porque tienen propiedades en común) */
+.form__input {
+	width: 100%;
+	padding: 6px;
+	margin: 6px;
+	border: none;
+	border-bottom: 3px solid #2c2;
+	background-color: transparent;
+}
+.form__input:focus {
+	outline: none;
+	background: linear-gradient(to top, transparent, #111);
+}
+.form__input[type="submit"] {
+	background-color: #292;
+}
+
+/* Propiedades exclusivas del textarea: */
+.form__section textarea {
+	height: 100px;
+	resize: none;
+}

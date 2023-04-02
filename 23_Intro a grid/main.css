@@ -1,0 +1,63 @@
+* {
+	font-family: 'Poppins', sans-serif;
+}
+
+body {
+	background: radial-gradient(circle, #fff, #ccc);
+	padding: 10px;
+}
+
+/* Grid es un tipo de layout basado en una grilla, y es un valor de la propiedad display */
+
+/* Grid-container: es una caja con la propiedad display: grid; los elementos dentro de este contenedor se dividen en grillas
+   Grid-item: todos los elementos que están dentro de un grid-container (elementos hijos)
+   Grid-cell: esquema o layout obtenido cuando, a un grid-container, se le asignan columnas y filas
+   Grid-tracks: son las filas y columnas. La cantidad de grid-tracks equivale a sumar el número de filas y de columnas
+   Grid-area: espacio rectangular conformado por varias celdas de nuestro grid. Nosotros definimos las areas
+   Grid-line (column-line y row-line): son las lineas que delimitan cada columna y cada fila
+ */
+
+.grid-container {
+	display: grid;
+	/* Por defecto, un grid-container solo tiene una columna y ninguna fila. Así se cambia la cantidad de filas y de columnas: */
+	
+	grid-template-columns: 150px 2fr 1fr 150px;
+	/* se debe definir el ancho de cada columna, en este caso, definí solo 4 columnas */
+	/* las filas y columnas que quedaron sin definir, se denominan grid-implícitos y no se podrán ver */
+	/* cuando la medida de una fila o columna tiene unidad "fr" se está definiendo en qué proporción se repartirá el espacio
+	que sobra en la pantalla, para que las filas o columnas puedan ocupar todo el ancho; es la misma idea que el flex-grow */
+	
+	grid-template-rows: repeat(3, 150px) 150px;
+	/* para no especificar las dimensiones de cada fila/columna, se usa la función repeat(cantidad, dimension) */
+
+	grid-gap: 10px;
+	/* grid-gap (o grid-column-gap y grid-row-gap) definen la separación que habrá entre cada fila o columna (como un margin) */
+	/* la separación solo es entre filas y columnas, no separa con los bordes del contenedor (esa es la diferencia con margin) */
+}
+
+.grid-item:first-child /* así selecciono solo el primer grid-item (la 1era ocurrencia de un div con class="grid-item") */ {
+	background-color: #a22;
+
+	/* uso "grid-column" y "grid-row" para definir en qué lineas debe comenzar y terminar una columna o fila
+	esto permite generar columnas o filas más anchas: */
+	grid-column: 1 / 3; /* esta columna empieza el la primera grid-line y termina en la tercera */
+	grid-row: 1 / 3;
+}
+
+.grid-item:nth-child(2) /* así selecciono el segundo grid-item (la 2da ocurrencia de un div con class="grid-item") */ {
+	background-color: #dd3;
+
+	grid-column: 3 / 5; /* grid-column es un shorthand de "grind-column-start" y "grid-column-end" */
+}
+
+.grid-item:nth-child(3) {
+	background-color: #283;
+
+	/* Poniendo "span" en un valor de "grid-column-end" o "grid-row-end" puedo indicar en qué columna o fila debe acabar
+	la columna o fila actual. Por ejemplo: */
+	grid-column: 1 / span 3; /* le estoy diciendo que "arranque en la column-line 1, y ocupe 3 columnas en total" */
+}
+
+.grid-item {
+	border: 2px solid #000;
+}

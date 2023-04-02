@@ -1,0 +1,14 @@
+/* CSS: Hojas de estilo en cascada. Se utiliza para dar estilo a los elementos HTML, siguiendo un orden secuencial */
+
+/* La estructura de un archivo CSS es la siguiente */
+
+selector {
+	propiedad: valor;
+}
+
+/* El "selector" sirve para seleccionar uno o varios elementos de nuestra página html y cambiar las propiedades de los mismos */
+/* Con "propiedad" se define cuál es la propiedad que deseamos cambiar */
+/* Con "valor" definimos cuál va a ser la propiedad */
+
+/* En HTML todos los elementos son cajas: cajas "display block" (aquellas que ocupan todo el ancho) y "display in line" (se ajustan a su contenido) */
+/* Con CSS, se cambiará las propiedades de esas cajas: por ejemplo, el tamaño, color, etc. */

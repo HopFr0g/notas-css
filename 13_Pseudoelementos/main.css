@@ -1,0 +1,58 @@
+* {
+	font-family: 'Poppins', sans-serif;
+	color: blue;
+}
+
+/* los pseudoelementos son similares a elementos y pueden afectar o no al DOM (Document Object Model) */
+
+/* pseudoelementos que afectan al DOM: */
+
+/* first-line se utiliza en elementos QUE NO SEAN INLINE, permite cambiar las propiedades a la primera linea de un texto */
+.main-section__p::first-line {
+	color: red;
+}
+
+/* first-letter es similar pero con la primera letra */
+.main-section__p::first-letter {
+	font-size: 72px;
+}
+
+/* selection cambia las propiedades del texto seleccionado */
+.main-section__p::selection {
+	background-color: hotpink;
+}
+
+.formulario {
+	margin: 100px auto; /* centrado */
+	display: block;
+	background-color: black;
+	box-sizing: border-box;
+	padding: 100px;
+	width: 50%;
+}
+
+.formulario__input {
+	padding: 6px;
+	width: 100%;
+}
+
+/* placeholder se utiliza para modificar las propiedades del texto que está dentro de un input vacío */
+.formulario__input::placeholder {
+	color: red;
+}
+
+/* before y afer: agregan contenido antes y después de un texto, respectivamente.
+
+				  - este tipo de pseudoelemento, crea un elemento que será hijo del elemento al que se lo aplicó
+				  - no forman parte del DOM
+				  - necesitan sí o sí la propiedad content
+				  - son elementos inline */
+.formulario__p::before {
+	content: "15";
+	color: white;
+}
+
+.formulario__p::after {
+	content: "Julio";
+	color: white;
+}

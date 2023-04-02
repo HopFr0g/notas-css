@@ -1,0 +1,33 @@
+/* Ignorar esto: */
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+/* Existen dos tipos de medidas: fijas y relativas */
+
+/* Medidas fijas, en este caso, aplicada a los elementos de una caja contenedora (un div) llamado contact-form */
+.contact-form {
+	font-size: 48px;
+	/* font-size permite cambiar el tamaño del texto, la unidad debe ser px (pixel) */
+	/* Otras unidades fijas que se pueden usar son mm (milimetros), pt (puntos), etc */
+}
+
+/* Las relativas dependen de la caja contenedora */
+/* El beneficio de usar medidas relativas, es que el tamaño de los elementos se adaptará según la pantalla del dispositivo */
+.contact-form__h2 {
+	font-size: 2em;
+	/* La unidad "em" es relativa al tamaño que le haya asignado a la caja que contiene a este elemento */
+	/* En este caso, asigné una font-size: 48px para la caja contenedora contact-form, por lo que 1 em = 48px */
+	/* Por defecto, 1em son 16 píxeles */
+}
+
+/* Ahora, otro tipo de medidas relativas. Esta vez, relativas al viewport */
+.ticket-form__h2 {
+	background: black;
+	color: white;
+	width: 50vw;
+	/* La unidad vw significa "viewport width" y representa el porcentaje del ancho total de la pantalla */
+	height: 50vh;
+	/* También se puede utilizar vh "viewport height" */
+}

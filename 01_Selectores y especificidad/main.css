@@ -1,0 +1,77 @@
+/* Tipos de selectores: */
+
+/* Universal: selecciona a todos los elementos, se utiliza el símbolo * para utilizar el selector universal */
+* {
+	color: blue;
+}
+
+/* De tipo: debo especificar a un tipo de etiqueta html en particular, para que el estilo aplique a todos esos elementos */
+button {
+	color: red;
+}
+
+/* De clase: dentro de las etiquetas HTML debo agregar el atributo class="nombre_de_la_clase" */
+/* Luego, puedo modificar las propiedades de todos los elementos de esa clase usando .nombre_de_la_clase {} por ejemplo
+se pueden seleccionar dos clases juntas, separandolas con comas */
+.titulos {
+	color:  black;
+}
+
+/* ID: Identificador UNICO para un elemento HTML. Se debe agregar el atributo id="nombre_identificador" dentro de la etiqueta HTML */
+/* Para modificar el elemento con ese ID, utilizar #nombre_identificador {} por ejemplo */
+#parrafo-copyright {
+	color: green;
+}
+
+/* Para modificar todos los elementos que tengan cierto atributo con cierto valor */
+/* Se debe utilizar el formato [atributo="valor"] {} por ejemplo */
+[href="https://developer.mozilla.org/es/docs/Web/CSS"] {
+	color:  fuchsia;
+}
+
+/* Descendiente: Para modificar todos los elementos de cierto tipo, que estén contenidos dentro de otro tipo de elemento */
+/* Por ejemplo, se pueden seleccionar todos los enlaces <a> que estén adentro de algún párrafo <p> */
+/* Se debe utilizar: nombre_elemento_contenedor nombre_elemento_contenido {} por ejemplo */
+p a {
+	color: orange;
+}
+/* No solo se puede hacer por tipo de elementos. Otro ejemplo: */ 
+/* Para modificar los textos en negrita <b> dentro de elementos con clase "informacion" se utilizaría .informacion b {} */
+/* Se pueden anidar más de dos tipos, por ejemplo, seleccionar imagenes dentro de enlaces dentro de parrafos: p a img {} */
+
+/* Pseudo-clases: modificar un elemento cuando ocurra cierto evento */
+/* Por ejemplo, modificar un titulo cuando ocurra el evento de pasar el mouse por encima suyo (evento "hover") */
+/* Utilizar la sintaxis elemento:evento {} por ejemplo */
+h1:hover {
+	color: brown;
+}
+/* Otro ejemplo (evento hover sobre los enlaces que a su vez estén dentro de un párrafo) */
+p a:hover {
+	color: yellow;
+}
+
+/* ESPECIFICIDAD */
+
+/* ¿Qué sucede cuando, por un conflicto al momento de seleccionar elementos, se le dan dos estilos distintos a lo mismo? */
+/* La especificidad permite comprender la forma de cambiar las propiedades de un elemento sin afectar al resto */
+
+/* Niveles de prioridad (donde el 1 es lo más prioritario y 5 lo menos prioritario)
+1) !important 
+2) estilos en linea 
+3) identificadores
+4) atributos, pseudo-clases y clases 
+5) Elementos y pseudo-elementos */
+
+/* El orden en cascada de CSS implica que, al seleccionar dos veces un elemento con la misma jerarquía, se tomará la de más abajo.
+Si una de las selecciones tiene más jerarquía que la otra
+(por ejemplo, selecciono a un título <h1 class="titulo"> primero por clase .titulo y luego por tipo h1) 
+da igual cuál esté abajo y cuál arriba, se utilizará la de mayor jerarquía (en el ejemplo, sería la clase .titulo) */
+
+/* Si en un archivo CSS agrego la etiqueta !important al final de una propiedad, esta tendrá mayor prioridad que cualquier otra selección */
+/* Ejemplo, al poner:
+
+h1 {
+	color: red; !important
+}
+
+todos los elementos h1 serán rojos, incluso si hay un selector de clase (que es de mayor prioridad) que también afecte a los títulos*/
